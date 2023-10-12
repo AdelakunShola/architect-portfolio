@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\Backend\TeamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/', [UserController::class, 'index']);
+   
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -45,3 +50,20 @@ Route::middleware(['auth','roles:admin'])->group(function(){
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 
+
+//Admin group Middleware
+Route::middleware(['auth','roles:admin'])->group(function(){
+
+
+    ////Team All Route
+    Route::controller(TeamController::class)->group(function() {
+
+    Route::get('/all/team', 'AllTeam')->name('all.team');
+    Route::get('/add/team', 'AddTeam')->name('add.team');
+    Route::get('/edit/team', 'EditTeam')->name('edit.team');
+    Route::get('/delete/team', 'DeleteTeam')->name('delete.team');
+    Route::post('/team/store', 'StoreTeam')->name('team.store');
+   
+});
+
+});   // end admin group middleware

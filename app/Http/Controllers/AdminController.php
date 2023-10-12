@@ -14,6 +14,7 @@ class AdminController extends Controller
     public function AdminDashboard(){
 
         return view('admin.index');
+        
 
 
     }//end method
@@ -101,7 +102,7 @@ class AdminController extends Controller
         }
 
         //update new password
-        User::whereId(auth::user()->Id)->update([
+        User::whereId(auth::user()->id)->update([
             'password' => Hash::make($request->new_password)
         ]);
 
