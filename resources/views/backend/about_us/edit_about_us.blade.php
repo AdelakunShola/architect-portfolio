@@ -7,10 +7,7 @@
 				<div class="container">
 					<div class="main-body">
 						<div class="row">
-
-
-
-
+   
 <div class="card">
     <div class="card-body">
         <ul class="nav nav-tabs nav-primary" role="tablist">
@@ -35,7 +32,7 @@
                         <div class="card-body p-4">
                            
 
-    <form class="row g-3" action="" method="post" enctype="multipart/form-data">
+    <form class="row g-3" action="{{ route('update.about') }}" method="post" enctype="multipart/form-data">
         @csrf
 
         
@@ -48,7 +45,7 @@
 
         <div class="col-md-6">
             <label for="input4" class="form-label">Gallery Image </label>
-            <input type="file" name="multi_img[]" class="form-control" multiple id="multiImg" accept="image/jpeg, image/jpg, image/gif, image/png" >
+            <input type="file" name="multi_image[]" class="form-control" multiple id="multiImg" accept="image/jpeg, image/jpg, image/gif, image/png" >
 
       
 
@@ -69,17 +66,21 @@
 
         <div class="col-md-12">
             <label for="input11" class="form-label">Title </label>
-            <textarea name="short_desc" class="form-control" id="input11" placeholder="Title ..." rows="2"></textarea>
+            <textarea name="main_title" class="form-control" id="input11" placeholder="Title ..." rows="2">{{ $about->main_title }}</textarea>
         </div>
   
         <div class="col-md-12">
             <label for="input11" class="form-label">Short Description </label>
-            <textarea name="short_desc" class="form-control" id="input11" placeholder="Short Description ..." rows="3"></textarea>
+            <textarea name="short_desc" class="form-control" id="input11" placeholder="Short Description ..." rows="3">{{ $about->short_desc }}</textarea>
         </div>
 
         <div class="col-md-12">
             <label for="input11" class="form-label"> Description </label>
-            <textarea name="description" class="form-control" id="myeditorinstance" ></textarea>
+            <textarea name="main_desc" class="form-control" id="myeditorinstance" >{{ $about->main_desc }}</textarea>
+        </div>
+        <div class="col-md-12">
+            <label for="input11" class="form-label">Link Url </label>
+            <textarea name="link_url" class="form-control" id="input11" placeholder="Title ..." rows="2">{{ $about->link_url }}</textarea>
         </div>
 
 

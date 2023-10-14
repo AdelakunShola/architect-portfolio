@@ -73,6 +73,7 @@ Route::middleware(['auth','roles:admin'])->group(function(){
  Route::controller(AboutController::class)->group(function() {
 
     Route::get('/edit/aboutus', 'EditAboutUs')->name('edit.about_us');
+    Route::post('/update/about', 'UpdateAbout')->name('update.about');
    
     
    
