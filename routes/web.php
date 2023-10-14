@@ -5,7 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\TeamController;
-
+use App\Http\Controllers\Backend\AboutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,9 +60,21 @@ Route::middleware(['auth','roles:admin'])->group(function(){
 
     Route::get('/all/team', 'AllTeam')->name('all.team');
     Route::get('/add/team', 'AddTeam')->name('add.team');
-    Route::get('/edit/team', 'EditTeam')->name('edit.team');
-    Route::get('/delete/team', 'DeleteTeam')->name('delete.team');
+    Route::get('/edit/team/{id}', 'EditTeam')->name('edit.team');
+    Route::get('/delete/team/{id}', 'DeleteTeam')->name('delete.team');
     Route::post('/team/store', 'StoreTeam')->name('team.store');
+    Route::post('/team/update', 'UpdateTeam')->name('team.update');
+   
+});
+
+
+
+ ////About us Route
+ Route::controller(AboutController::class)->group(function() {
+
+    Route::get('/edit/aboutus', 'EditAboutUs')->name('edit.about_us');
+   
+    
    
 });
 

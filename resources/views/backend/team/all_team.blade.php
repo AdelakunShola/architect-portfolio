@@ -54,7 +54,7 @@
                                     </td>
 										<td>{{ $item->name }}</td>
 										<td>{{ $item->position }}</td>
-										<td>{{ $item->Instagram }}</td>
+										<td>{{ $item->instagram }}</td>
 										<td>{{ $item->twitter }}</td>
                                         <td>{{ $item->youtube }}</td>
                                         <td>
