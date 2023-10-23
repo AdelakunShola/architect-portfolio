@@ -27,7 +27,7 @@
                         <!-- COLUMNS 1 -->
                         <div class="item fadingcol building-col">
                             <div class="wt-img-effect ">
-                                <img src="assets/images/gallery/portrait/pic1.jpg" alt="">
+                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic1.jpg')}}" alt="">
                                 <div class="overlay-bx-2 ">
                                     <div class="line-amiation">
                                         <div class="text-white  font-weight-300 p-a40">
@@ -43,7 +43,7 @@
                         <!-- COLUMNS 2 -->
                         <div class="item fadingcol  building-col">
                             <div class="wt-img-effect ">
-                                <img src="assets/images/gallery/portrait/pic2.jpg" alt="">
+                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic2.jpg')}}" alt="">
                                 <div class="overlay-bx-2 ">
                                     <div class="line-amiation">
                                         <div class="text-white  font-weight-300 p-a40">
@@ -60,7 +60,7 @@
 
                         <div class="item fadingcol building-col">
                             <div class="wt-img-effect ">
-                                <img src="assets/images/gallery/portrait/pic3.jpg" alt="">
+                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic3.jpg')}}" alt="">
                                 <div class="overlay-bx-2 ">
                                     <div class="line-amiation">
                                         <div class="text-white  font-weight-300 p-a40">
@@ -76,7 +76,7 @@
                         <!-- COLUMNS 4 -->
                         <div class="item fadingcol building-col">
                             <div class="wt-img-effect ">
-                                <img src="assets/images/gallery/portrait/pic4.jpg" alt="">
+                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic4.jpg')}}" alt="">
                                 <div class="overlay-bx-2 ">
                                     <div class="line-amiation">
                                         <div class="text-white  font-weight-300 p-a40">
@@ -92,7 +92,7 @@
                         <!-- COLUMNS 5 -->
                         <div class="item fadingcol interior-col">
                             <div class="wt-img-effect ">
-                                <img src="assets/images/gallery/portrait/pic5.jpg" alt="">
+                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic5.jpg')}}" alt="">
                                 <div class="overlay-bx-2 ">
                                     <div class="line-amiation">
                                         <div class="text-white  font-weight-300 p-a40">
@@ -108,7 +108,7 @@
                         <!-- COLUMNS 6 -->
                         <div class="item fadingcol restaurant-col">
                             <div class="wt-img-effect ">
-                                <img src="assets/images/gallery/portrait/pic6.jpg" alt="">
+                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic6.jpg')}}" alt="">
                                 <div class="overlay-bx-2 ">
                                     <div class="line-amiation">
                                         <div class="text-white  font-weight-300 p-a40">
@@ -124,7 +124,7 @@
                         <!-- COLUMNS 7 -->
                         <div class="item fadingcol restaurant-col">
                             <div class="wt-img-effect ">
-                                <img src="assets/images/gallery/portrait/pic7.jpg" alt="">
+                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic7.jpg')}}" alt="">
                                 <div class="overlay-bx-2 ">
                                     <div class="line-amiation">
                                         <div class="text-white  font-weight-300 p-a40">
@@ -140,7 +140,7 @@
                         <!-- COLUMNS 8 -->
                         <div class="item fadingcol interior-col">
                             <div class="wt-img-effect ">
-                                <img src="assets/images/gallery/portrait/pic8.jpg" alt="">
+                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic8.jpg')}}" alt="">
                                 <div class="overlay-bx-2 ">
                                     <div class="line-amiation">
                                         <div class="text-white  font-weight-300 p-a40">

@@ -37,6 +37,27 @@
 					</ul>
 				</li>
 
+
+				<li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
+                </div>
+                <div class="menu-title">Manage Home Page</div>
+            </a>
+            <ul>
+            
+                <li> <a href="{{ route('home.page') }}"><i class='bx bx-radio-circle'></i>Home Page</a>
+                </li>
+				<li> <a href="{{ route('home.multi.image') }}"><i class='bx bx-radio-circle'></i>Home Multi Image</a>
+                </li>
+               
+               
+                 
+            </ul>
+        </li>
+
+
+
 				<li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
@@ -45,7 +66,9 @@
             </a>
             <ul>
             
-                <li> <a href="{{ route('edit.about_us') }}"><i class='bx bx-radio-circle'></i>About Us</a>
+                <li> <a href="{{ route('about.page') }}"><i class='bx bx-radio-circle'></i>About Us</a>
+                </li>
+				<li> <a href="{{ route('about.multi.image') }}"><i class='bx bx-radio-circle'></i>About Multi Image</a>
                 </li>
                
                

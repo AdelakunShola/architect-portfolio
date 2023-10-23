@@ -16,7 +16,7 @@
                     <div class="d-flex align-items-center">
                         <div class="tab-icon"><i class="bx bx-home font-18 me-1"></i>
                         </div>
-                        <div class="tab-title">About Us </div>
+                        <div class="tab-title">Home Page </div>
                     </div>
                 </a>
             </li>
@@ -32,81 +32,34 @@
                         <div class="card-body p-4">
                            
 
-    <form class="row g-3" action="{{ route('update.about') }}" method="post" enctype="multipart/form-data">
+    <form class="row g-3" action="{{ route('update.home') }}" method="post" enctype="multipart/form-data">
         @csrf
 
-        
-
-
-      
-
-
-
-
-        <div class="col-md-6">
-            <label for="input4" class="form-label">Gallery Image </label>
-            <input type="file" name="multi_image[]" class="form-control" multiple id="multiImg" accept="image/jpeg, image/jpg, image/gif, image/png" >
-
-      
-
-            
-
-            <a href=""><i class="lni lni-close"></i> </a>  
-
-        
-
-
-            <div class="row" id="preview_img"></div>
-        </div>
-
-
-        
+        <input type="hidden" name="id" value="{{ $homepage->id }}">
 
        
 
         <div class="col-md-12">
-            <label for="input11" class="form-label">Title </label>
-            <textarea name="main_title" class="form-control" id="input11" placeholder="Title ..." rows="2">{{ $about->main_title }}</textarea>
+            <label for="input11" class="form-label">Short Title </label>
+            <textarea name="short_title" class="form-control" id="input11" placeholder="Title ..." rows="2">{{ $homepage->short_title }}</textarea>
         </div>
   
         <div class="col-md-12">
             <label for="input11" class="form-label">Short Description </label>
-            <textarea name="short_desc" class="form-control" id="input11" placeholder="Short Description ..." rows="3">{{ $about->short_desc }}</textarea>
+            <textarea name="short_desc" class="form-control" id="input11" placeholder="Short Description ..." rows="3">{{ $homepage->short_desc }}</textarea>
         </div>
 
-        <div class="col-md-12">
-            <label for="input11" class="form-label"> Description </label>
-            <textarea name="main_desc" class="form-control" id="myeditorinstance" >{{ $about->main_desc }}</textarea>
-        </div>
-        <div class="col-md-12">
-            <label for="input11" class="form-label">Link Url </label>
-            <textarea name="link_url" class="form-control" id="input11" placeholder="Title ..." rows="2">{{ $about->link_url }}</textarea>
-        </div>
-
-
-
-
-        
-           
-                               
-                            </div>
+      
+       
+              </div>
                            
-                        </div>
+                 </div>
                     </div>
-           
-             
-           
-           
-           
-                                </div> 
-                             </div>
+                 </div> 
+                       </div>
                              <br>
            
-
- 
-
- 
-        <div class="col-md-12">
+           <div class="col-md-12">
             <div class="d-md-flex d-grid align-items-center gap-3">
                 <button type="submit" class="btn btn-primary px-4">Save Changes</button> 
             </div>
@@ -117,38 +70,14 @@
  
                 </div>
 
-
-
-
-
             </div>
-             {{-- // End primaryhome --}}
-
-
-
- 
-
-
-
             
-            {{-- // end PrimaryProfile --}}
-            
-
-
-
         </div>
     </div>
 </div>
-
-
-
-
-
-						 
- 
-						</div>
-					</div>
-				</div>
+	</div>
+	</div>
+	</div>
  </div>
 
  
@@ -195,16 +124,6 @@
      });
     });
  </script>
-
-
-<!--========== Start of add Basic Plan Facilities ==============-->
-
- <!--========== End of Basic Plan Facilities ==============-->
-
-  <!--========== Start Room Number Add ==============-->
-   
-
-   <!--========== End Room Number Add ==============-->
 
 
 @endsection

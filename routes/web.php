@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\AboutController;
+use App\Http\Controllers\Backend\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,10 +73,30 @@ Route::middleware(['auth','roles:admin'])->group(function(){
  ////About us Route
  Route::controller(AboutController::class)->group(function() {
 
-    Route::get('/edit/aboutus', 'EditAboutUs')->name('edit.about_us');
+    Route::get('/about/page', 'AboutPage')->name('about.page');
     Route::post('/update/about', 'UpdateAbout')->name('update.about');
-   
+
+
+    Route::get('/about/multi/image', 'AboutMultiImage')->name('about.multi.image');
+    Route::post('/update/multi', 'UpdateMulti')->name('update.multi');
     
+   
+});
+
+
+
+
+ ////About us Route
+ Route::controller(HomeController::class)->group(function() {
+
+    Route::get('/home/page', 'HomePage')->name('home.page');
+    Route::post('/update/home', 'UpdateHome')->name('update.home');
+
+    Route::get('/home/multi/image', 'HomeMultiImage')->name('home.multi.image');
+    Route::post('/update/slide', 'UpdateSlide')->name('update.slide');
+    
+   
+
    
 });
 
