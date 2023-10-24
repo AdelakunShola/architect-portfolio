@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\HomeController;
+use App\Http\Controllers\Backend\ProjectTypeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -79,14 +80,12 @@ Route::middleware(['auth','roles:admin'])->group(function(){
 
     Route::get('/about/multi/image', 'AboutMultiImage')->name('about.multi.image');
     Route::post('/update/multi', 'UpdateMulti')->name('update.multi');
-    
-   
 });
 
 
 
 
- ////About us Route
+ ////Home Slide Route
  Route::controller(HomeController::class)->group(function() {
 
     Route::get('/home/page', 'HomePage')->name('home.page');
@@ -94,9 +93,16 @@ Route::middleware(['auth','roles:admin'])->group(function(){
 
     Route::get('/home/multi/image', 'HomeMultiImage')->name('home.multi.image');
     Route::post('/update/slide', 'UpdateSlide')->name('update.slide');
-    
-   
+ 
+});
 
+
+
+
+ ////Project type list Route
+ Route::controller(ProjectTypeController::class)->group(function() {
+
+    Route::get('/project/type/list', 'ProjectType')->name('project.type.list');
    
 });
 

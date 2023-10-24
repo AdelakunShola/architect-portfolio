@@ -75,6 +75,26 @@
                  
             </ul>
         </li>
+
+
+		<li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
+                </div>
+                <div class="menu-title">Manage Project Type</div>
+            </a>
+            <ul>
+            
+                <li> <a href="{{ route('project.type.list') }}"><i class='bx bx-radio-circle'></i>Project Type List</a>
+                </li>
+				
+               
+               
+                 
+            </ul>
+        </li>
+
+
 				<li class="menu-label">UI Elements</li>
 				
 				<li>
