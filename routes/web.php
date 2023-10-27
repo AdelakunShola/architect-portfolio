@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\ProjectTypeController;
+use App\Http\Controllers\Backend\ProjectDetailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -103,7 +104,19 @@ Route::middleware(['auth','roles:admin'])->group(function(){
  Route::controller(ProjectTypeController::class)->group(function() {
 
     Route::get('/project/type/list', 'ProjectType')->name('project.type.list');
+    Route::get('/add/project/type', 'AddProjectType')->name('add.project.type');
+    Route::post('/project/type/store', 'ProjectTypeStore')->name('projecttype.store');
+
+});
+
+
+
+////Project details Route
+Route::controller(ProjectDetailController::class)->group(function() {
+
+    Route::get('/edit/project/{id}', 'EditProject')->name('edit.project');
    
+
 });
 
 });   // end admin group middleware
