@@ -18,4 +18,13 @@ class ProjectDetailController extends Controller
 
 
     }//end method
+
+    public function ProjectList(){
+        
+        $allproject = ProjectDetail::all();
+        return view('backend.allproject.all_project',compact('allproject'));
+
+    }//end method
+
+    
 }

@@ -9,4 +9,8 @@ class ProjectDetail extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function type(){
+        return $this->belongsTo(ProjectType::class, 'projecttype_id', 'id');
+    }
 }

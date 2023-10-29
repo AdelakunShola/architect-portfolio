@@ -114,7 +114,8 @@ Route::middleware(['auth','roles:admin'])->group(function(){
 ////Project details Route
 Route::controller(ProjectDetailController::class)->group(function() {
 
-    Route::get('/edit/project/{id}', 'EditProject')->name('edit.project');
+    Route::get('/edit/project/{id}', 'EditProject')->name('edit.project'); 
+    Route::get('/project/list', 'ProjectList')->name('project.list');
    
 
 });

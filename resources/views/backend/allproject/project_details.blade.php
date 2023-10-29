@@ -8,32 +8,9 @@
 					<div class="main-body">
 						<div class="row">
 
-
-
-
 <div class="card">
     <div class="card-body">
-        <ul class="nav nav-tabs nav-primary" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a class="nav-link active" data-bs-toggle="tab" href="#primaryhome" role="tab" aria-selected="true">
-                    <div class="d-flex align-items-center">
-                        <div class="tab-icon"><i class="bx bx-home font-18 me-1"></i>
-                        </div>
-                        <div class="tab-title">Manage Room </div>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" data-bs-toggle="tab" href="#primaryprofile" role="tab" aria-selected="false" tabindex="-1">
-                    <div class="d-flex align-items-center">
-                        <div class="tab-icon"><i class="bx bx-user-pin font-18 me-1"></i>
-                        </div>
-                        <div class="tab-title">Room Number</div>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
+       
         <div class="tab-content py-3">
             <div class="tab-pane fade active show" id="primaryhome" role="tabpanel">
               
@@ -41,7 +18,7 @@
 						
                     <div class="card">
                         <div class="card-body p-4">
-                            <h5 class="mb-4">Update Room </h5>
+                            <h5 class="mb-4">Update Project Details</h5>
 
     <form class="row g-3" action="" method="post" enctype="multipart/form-data">
         @csrf
@@ -76,21 +53,21 @@
 
         <div class="col-md-4">
             <label for="input1" class="form-label">Project Type </label>
-            <input type="text" name="roomtype_id" class="form-control" id="input1" value="" >
+            <input type="text" name="roomtype_id" class="form-control" id="input1" value="{{ $editData['type']['name'] }}" >
         </div>
         <div class="col-md-4">
             <label for="input2" class="form-label">Client Name</label>
-            <input type="text" name="total_adult" class="form-control" id="input2"  value="">
+            <input type="text" name="client" class="form-control" id="input2"  value="">
         </div>
 
         <div class="col-md-4">
             <label for="input2" class="form-label">Creative Director </label>
-            <input type="text" name="total_child" class="form-control" id="input2" value="">
+            <input type="text" name="creative_director" class="form-control" id="input2" value="">
         </div>
 
         <div class="col-md-4">
             <label for="input2" class="form-label">Youtube Link </label>
-            <input type="text" name="total_child" class="form-control" id="input2" value="">
+            <input type="text" name="link_url" class="form-control" id="input2" value="">
         </div>
 
         <div class="col-md-12">
@@ -106,7 +83,7 @@
 
         <div class="col-md-12">
             <label for="input11" class="form-label"> Description </label>
-            <textarea name="description" class="form-control" id="myeditorinstance" ></textarea>
+            <textarea name="main_desc" class="form-control" id="myeditorinstance" ></textarea>
         </div>
 
         <div class="col-md-12">
@@ -119,20 +96,8 @@
                     </div>
  
                 </div>
-
-
-
-
-
-            </div>
-        
-
-
- 
-
-
-
-            <div class="tab-pane fade" id="primaryprofile" role="tabpanel">
+             </div>
+         <div class="tab-pane fade" id="primaryprofile" role="tabpanel">
                  <div class="card">
                     <div class="card-body">
     <a class="card-title btn btn-primary float-right" onclick="addRoomNo()" id="addRoomNo" >
@@ -195,40 +160,16 @@
                 
             </tbody>
         </table>
-
-
-
-
-
-
-
-
-
-                    </div>
-                    </div> 
-
-
-
+           </div>
             </div> 
-            {{-- // end PrimaryProfile --}}
-            
-
-
-
-        </div>
+            </div> 
+       </div>
     </div>
 </div>
-
-
-
-
-
-						 
- 
-						</div>
-					</div>
-				</div>
- </div>
+	</div>
+		</div>
+		</div>
+        </div>
 
  
         <script type="text/javascript">
