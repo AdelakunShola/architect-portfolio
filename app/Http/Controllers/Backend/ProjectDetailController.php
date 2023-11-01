@@ -19,6 +19,15 @@ class ProjectDetailController extends Controller
 
     }//end method
 
+
+    public function AddProject(){
+        
+        $addproject = ProjectDetail::all();
+        return view('backend.allproject.add_project',compact('addproject'));
+
+    }//end method
+
+
     public function ProjectList(){
         
         $allproject = ProjectDetail::all();

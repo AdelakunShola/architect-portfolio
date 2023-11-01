@@ -18,7 +18,7 @@
 						
                     <div class="card">
                         <div class="card-body p-4">
-                            <h5 class="mb-4">Update Project Details</h5>
+                            <h5 class="mb-4">Add Project</h5>
 
     <form class="row g-3" action="" method="post" enctype="multipart/form-data">
         @csrf
@@ -53,7 +53,7 @@
 
         <div class="col-md-4">
             <label for="input1" class="form-label">Project Type </label>
-            <input type="text" name="roomtype_id" class="form-control" id="input1" value="" >  <!--========== {{ $editData['type']['name'] }}   ==============-->
+            <input type="text" name="roomtype_id" class="form-control" id="input1" value="" >  
         </div>
         <div class="col-md-4">
             <label for="input2" class="form-label">Client Name</label>

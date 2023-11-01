@@ -104,6 +104,7 @@
             <ul>
             
                 <li> <a href="{{ route('project.list') }}"><i class='bx bx-radio-circle'></i>All Project</a>
+				<li> <a href="{{ route('project.list') }}"><i class='bx bx-radio-circle'></i>All Project</a>
                 </li>
 				
                

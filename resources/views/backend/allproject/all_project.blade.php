@@ -10,13 +10,13 @@
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">All Room List </li>
+                    <li class="breadcrumb-item active" aria-current="page">All Project </li>
                 </ol>
             </nav>
         </div>
         <div class="ms-auto">
             <div class="btn-group">
-                <a href="{{ route('add.room.list') }}" class="btn btn-primary px-5">Add Booking </a>
+                <a href="{{ route('add.project') }}" class="btn btn-primary px-5">Add Project </a>
                 
             </div>
         </div>
@@ -35,16 +35,39 @@
                             <th>Sl</th>
                             <th>Project Type</th>
                             <th>Creative Director</th>
-                            <th>YT-link </th>
                             <th>Image</th>
                             <th>Desc</th>
                             <th>Short_Desc </th>
                             <th>Title</th>
-                            <th>Room Number</th>
                             <th>YT-link </th>
+                            <th>Action </th>
                             
                         </tr>
                     </thead>
+
+                    <tbody>
+                    @foreach ($allproject as $key=> $item )
+                    <tr>
+                        <td>{{ $key+1 }}</td>
+                        <td>{{ $item->project_type }}</td>
+                        <td>{{ $item->creative_director }}</td>
+                        <td>{{ $item->image }}</td>
+                        <td>{{ $item->main_desc }}</td>
+                        <td>{{ $item->short_desc }}</td>
+                        <td>{{ $item->title }}</td>
+                        <td>{{ $item->link_url }}</td>
+                          
+                        
+                        <td>
+							    <a href="{{ route('edit.project', $item->id) }}" class="btn btn-warning px-3 radius-30">Edit</a>
+							
+                                        <a href="" class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
+									
+                                        </td>
+                        
+                    </tr>
+                    @endforeach 
+                    </tbody>
                    
                  
                 </table>
