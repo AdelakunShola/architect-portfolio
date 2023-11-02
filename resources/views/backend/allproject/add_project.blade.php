@@ -20,7 +20,7 @@
                         <div class="card-body p-4">
                             <h5 class="mb-4">Add Project</h5>
 
-    <form class="row g-3" action="" method="post" enctype="multipart/form-data">
+    <form class="row g-3" action="{{ route('project.store') }}" method="post" enctype="multipart/form-data">
         @csrf
 
        

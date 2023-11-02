@@ -52,38 +52,52 @@
         </div>
 
         <div class="col-md-4">
+                    <label for="input7" class="form-label">Project Type </label>
+                    <select name="" id="input7" class="form-select">
+                        <option selected="">Select Status...</option>
+                        <option value="Active"> {{ $editData['type']['name'] }} </option>
+                       
+                       
+                    </select>
+                </div> 
+
+                <div class="col-md-4">
             <label for="input1" class="form-label">Project Type </label>
-            <input type="text" name="roomtype_id" class="form-control" id="input1" value="" >  <!--========== {{ $editData['type']['name'] }}   ==============-->
+            <input type="text" name="roomtype_id" class="form-control" id="input1" value="{{ $editData->project_type }}" > 
+            
         </div>
+
+        
         <div class="col-md-4">
             <label for="input2" class="form-label">Client Name</label>
-            <input type="text" name="client" class="form-control" id="input2"  value="">
+            <input type="text" name="client" class="form-control" id="input2"  value="{{ $editData->client }}">
         </div>
 
         <div class="col-md-4">
             <label for="input2" class="form-label">Creative Director </label>
-            <input type="text" name="creative_director" class="form-control" id="input2" value="">
+            <input type="text" name="creative_director" class="form-control" id="input2" value="{{ $editData->creative_director }}">
         </div>
 
         <div class="col-md-4">
             <label for="input2" class="form-label">Youtube Link </label>
-            <input type="text" name="link_url" class="form-control" id="input2" value="">
+            <input type="text" name="link_url" class="form-control" id="input2" value="{{ $editData->link_url }}">
         </div>
+        
 
         <div class="col-md-12">
             <label for="input11" class="form-label">Title </label>
-            <textarea name="title" class="form-control" id="input11" placeholder="Address ..." rows="3"></textarea>
+            <textarea name="title" class="form-control" id="input11" placeholder="Address ..." rows="3">{{ $editData->title }}</textarea>
         </div>
 
   
         <div class="col-md-12">
             <label for="input11" class="form-label">Short Description </label>
-            <textarea name="short_desc" class="form-control" id="input11" placeholder="Address ..." rows="3"></textarea>
+            <textarea name="short_desc" class="form-control" id="input11" placeholder="Address ..." rows="3">{{ $editData->short_desc }}</textarea>
         </div>
 
         <div class="col-md-12">
             <label for="input11" class="form-label"> Description </label>
-            <textarea name="main_desc" class="form-control" id="myeditorinstance" ></textarea>
+            <textarea name="main_desc" class="form-control" id="myeditorinstance" >{{ $editData->main_desc }}</textarea>
         </div>
 
         <div class="col-md-12">
@@ -97,72 +111,7 @@
  
                 </div>
              </div>
-         <div class="tab-pane fade" id="primaryprofile" role="tabpanel">
-                 <div class="card">
-                    <div class="card-body">
-    <a class="card-title btn btn-primary float-right" onclick="addRoomNo()" id="addRoomNo" >
-                            <i class="lni lni-plus">Add New</i>
-                        </a>
-        <div class="roomnoHide" id="roomnoHide">
-            <form action="" method="post">
-                @csrf
-
-                <input type="hidden" name="room_type_id" value="" >
-
-                <div class="row">
-                <div class="col-md-4">
-                    <label for="input2" class="form-label">Room No </label>
-                    <input type="text" name="room_no" class="form-control" id="input2" >
-                </div>
-        
-                <div class="col-md-4">
-                    <label for="input7" class="form-label">Status </label>
-                    <select name="status" id="input7" class="form-select">
-                        <option selected="">Select Status...</option>
-                        <option value="Active">Active </option>
-                        <option value="Inactive">Inactive  </option>
-                       
-                    </select>
-                </div> 
-
-                <div class="col-md-4">
-                    
-                    <button type="submit" class="btn btn-success" style="margin-top: 28px;">Save</button>
-                    
-                </div> 
-            </div> 
-            </form> 
-        </div>
-
-
-        <table class="table mb-0 table-striped" id="roomview">
-            <thead>
-                <tr>
-                    <th scope="col">Room Number</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th> 
-                </tr>
-            </thead>
-            <tbody>
-          
-              
-               
-                <tr> 
-                    <td></td>
-                    <td></td>
-                    <td>
-    <a href="" class="btn btn-warning px-3 radius-30"> Edit</a>
-    <a href="" class="btn btn-danger px-3 radius-30" id="delete"> Delete</a>  
-
-                    </td>
-                </tr>
-               
-                
-            </tbody>
-        </table>
-           </div>
-            </div> 
-            </div> 
+         
        </div>
     </div>
 </div>

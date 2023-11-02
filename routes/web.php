@@ -116,7 +116,8 @@ Route::controller(ProjectDetailController::class)->group(function() {
 
     Route::get('/edit/project/{id}', 'EditProject')->name('edit.project'); 
     Route::get('/project/list', 'ProjectList')->name('project.list');
-    Route::get('/add/project', 'AddProject')->name('add.project'); 
+    Route::get('/add/project', 'AddProject')->name('add.project');
+    Route::get('/store/project', 'StoreProject')->name('project.store'); 
    
 
 });
