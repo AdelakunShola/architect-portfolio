@@ -51,15 +51,15 @@
             <div class="row" id="preview_img"></div>
         </div>
 
-        <div class="col-md-4">
+     <!--==========    <div class="col-md-4">
                     <label for="input7" class="form-label">Project Type </label>
                     <select name="" id="input7" class="form-select">
                         <option selected="">Select Status...</option>
-                        <option value="Active"> {{ $editData['type']['name'] }} </option>
+                        <option value="Active">  </option>
                        
                        
                     </select>
-                </div> 
+                </div>  ==============-->
 
                 <div class="col-md-4">
             <label for="input1" class="form-label">Project Type </label>
