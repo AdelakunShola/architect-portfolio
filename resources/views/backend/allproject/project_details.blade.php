@@ -86,18 +86,18 @@
 
         <div class="col-md-12">
             <label for="input11" class="form-label">Title </label>
-            <textarea name="title" class="form-control" id="input11" placeholder="Address ..." rows="3">{{ $editData->title }}</textarea>
+            <textarea name="title" class="form-control" id="input11" placeholder="Title ..." rows="3">{{ $editData->title }}</textarea>
         </div>
 
   
         <div class="col-md-12">
             <label for="input11" class="form-label">Short Description </label>
-            <textarea name="short_desc" class="form-control" id="input11" placeholder="Address ..." rows="3">{{ $editData->short_desc }}</textarea>
+            <textarea name="short_desc" class="form-control" id="input11" placeholder="Short Description ..." rows="3">{{ $editData->short_desc }}</textarea>
         </div>
 
         <div class="col-md-12">
             <label for="input11" class="form-label"> Description </label>
-            <textarea name="main_desc" class="form-control" id="myeditorinstance" >{{ $editData->main_desc }}</textarea>
+            <textarea name="main_desc" class="form-control" id="myeditorinstance" >{!! $editData->main_desc !!}</textarea>
         </div>
 
         <div class="col-md-12">
