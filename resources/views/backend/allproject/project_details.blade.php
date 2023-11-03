@@ -29,7 +29,9 @@
             <label for="input3" class="form-label">Main Image </label>
             <input type="file" name="image" class="form-control" id="image"  >
 
-            <img id="showImage" src="{{ (!empty($editData->image)) ? url('upload/projectdetail/'.$editData->image) : url('upload/no_image.jpg') }} " alt="" class="bg-primary" width="70" height="50"> 
+            <img id="showImage" src="{{ (!empty($editData->image)) ? url('upload/
+                projectdetail/'.$editData->image) : url('upload/no_image.jpg') }} "
+                 alt="" class="bg-primary" width="70" height="50"> 
         </div>
 
 
@@ -37,18 +39,17 @@
 
         <div class="col-md-6">
             <label for="input4" class="form-label">Gallery Image </label>
-            <input type="file" name="multi_img[]" class="form-control" multiple id="multiImg" accept="image/jpeg, image/jpg, image/gif, image/png" >
+            <input type="file" name="multi_img[]" class="form-control" 
+            multiple id="multiImg" accept="image/jpeg, image/jpg, image/gif, 
+            image/png" >
 
            
 
-            <img src="" alt="Admin" class="bg-primary" width="60"> 
+            <img src="" alt="" class="bg-primary" width="60"> 
 
               <a href=""><i class="lni lni-close"></i> </a>  
-
-         
-
-
-            <div class="row" id="preview_img"></div>
+              
+              <div class="row" id="preview_img"></div>
         </div>
 
      <!--==========    <div class="col-md-4">
