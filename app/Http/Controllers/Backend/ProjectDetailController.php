@@ -20,6 +20,33 @@ class ProjectDetailController extends Controller
     }//end method
 
 
+    public function UpdateProject(Request $request, $id){
+
+        $project = ProjectDetail::find($id);
+        $project->title = $request->title;
+        $project->short_desc = $request->short_desc;
+        $project->main_desc = $request->main_desc;
+        $project->client = $request->client;
+        $project->project_type = $request->project_type;
+        $project->creative_director = $request->creative_director;
+        $project->link_url = $request->link_url;
+
+        ///Update single image
+
+        if($request->file('image')){
+
+            $image = $request->file('image');
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(360,560)->save('upload/projectdetail/'.$name_gen);
+            $project['image'] = $name_gen;
+            
+        }
+        
+
+
+    }//end method
+
+
     public function AddProject(){
         
         $addproject = ProjectDetail::all();
