@@ -38,9 +38,10 @@ class ProjectDetailController extends Controller
             $image = $request->file('image');
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
             Image::make($image)->resize(360,560)->save('upload/projectdetail/'.$name_gen);
-            $project['image'] = $name_gen;
-            
+            $project['image'] = $name_gen;    
         }
+
+        $project->save();
         
 
 
