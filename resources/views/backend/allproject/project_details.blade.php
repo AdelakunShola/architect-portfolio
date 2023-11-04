@@ -29,8 +29,7 @@
             <label for="input3" class="form-label">Main Image </label>
             <input type="file" name="image" class="form-control" id="image"  >
 
-            <img id="showImage" src="{{ (!empty($editData->image)) ? url('upload/
-                projectdetail/'.$editData->image) : url('upload/no_image.jpg') }} "
+            <img id="showImage" src="{{ (!empty($editData->image)) ? url('upload/projectdetail/'.$editData->image) : url('upload/no_image.jpg') }} "
                  alt="" class="bg-primary" width="70" height="50"> 
         </div>
 
@@ -43,11 +42,16 @@
             multiple id="multiImg" accept="image/jpeg, image/jpg, image/gif, 
             image/png" >
 
+
+            @foreach ($multiimg as $item)
+
+            <img src="{{ (!empty($item->multi_image)) ? url('upload/projectdetail/multi/'.$item->multi_image) : url('upload/no_image.jpg') }}" alt="Admin" class="bg-primary" width="60"> 
+
+              <a href="{{ route('multi.image.delete',$item->id) }}"><i class="lni lni-close"></i> </a>  
+
+            @endforeach
+
            
-
-            <img src="" alt="" class="bg-primary" width="60"> 
-
-              <a href=""><i class="lni lni-close"></i> </a>  
               
               <div class="row" id="preview_img"></div>
         </div>
@@ -71,7 +75,7 @@
         
         <div class="col-md-4">
             <label for="input2" class="form-label">Client Name</label>
-            <input type="text" name="client" class="form-control" id="input2"  value="{{ $editData->client }}">
+            <input type="text" name="client" class="form-control" id="input6"  value="{{ $editData->client }}">
         </div>
 
         <div class="col-md-4">
@@ -81,7 +85,7 @@
 
         <div class="col-md-4">
             <label for="input2" class="form-label">Youtube Link </label>
-            <input type="text" name="link_url" class="form-control" id="input2" value="{{ $editData->link_url }}">
+            <input type="text" name="link_url" class="form-control" id="input5" value="{{ $editData->link_url }}">
         </div>
         
 
@@ -93,7 +97,7 @@
   
         <div class="col-md-12">
             <label for="input11" class="form-label">Short Description </label>
-            <textarea name="short_desc" class="form-control" id="input11" placeholder="Short Description ..." rows="3">{{ $editData->short_desc }}</textarea>
+            <textarea name="short_desc" class="form-control" id="input4" placeholder="Short Description ..." rows="3">{{ $editData->short_desc }}</textarea>
         </div>
 
         <div class="col-md-12">

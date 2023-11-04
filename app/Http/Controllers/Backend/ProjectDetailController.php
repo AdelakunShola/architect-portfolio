@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use App\Models\ProjectType;
+use App\Models\MultiImageProject;
 use App\Models\ProjectDetail;
 use Carbon\Carbon;
 
@@ -13,8 +14,9 @@ class ProjectDetailController extends Controller
 {
     public function EditProject($id){
         
+        $multiimg = MultiImageProject::where('project_detail_id',$id)->get();
         $editData = ProjectDetail::find($id);
-        return view('backend.allproject.project_details',compact('editData'));
+        return view('backend.allproject.project_details',compact('editData','multiimg'));
 
 
     }//end method
@@ -42,10 +44,72 @@ class ProjectDetailController extends Controller
         }
 
         $project->save();
-        
 
+        ///update multi-image
+
+        if($project->save()){
+            $files = $request->multi_img;
+            if(!empty($files)){
+                $subimage = MultiImageProject::where('project_detail_id',$id)->get()->toArray();
+                MultiImageProject::where('project_detail_id',$id)->delete();
+
+            }
+            if(!empty($files)){
+                foreach($files as $file){
+                    $imgName = date('YmdHi').$file->getClientOriginalName();
+                    $file->move('upload/projectdetail/multi/',$imgName);
+                    $subimage['multi_image'] = $imgName;
+
+                    $subimage = new MultiImageProject();
+                    $subimage->project_detail_id = $project->id;
+                    $subimage->multi_image = $imgName;
+                    $subimage->save();
+                }
+        }
+        
+    }///end if condition
+
+    $notification = array(
+        'message' => 'Project Updated Successfully',
+        'alert-type' => 'success'
+    );
+
+    return redirect()->back()->with($notification);
 
     }//end method
+
+
+
+    public function MultiImageDelete($id){
+
+        $deletedata = MultiImageProject::where('id',$id)->first();
+
+        if($deletedata){
+
+            $imagePath = $deletedata->multi_image;
+
+            // Check if the file exists before unlinking 
+            if (file_exists($imagePath)) {
+               unlink($imagePath);
+               echo "Image Unlinked Successfully";
+            }else{
+                echo "Image does not exist";
+            }
+
+            //  Delete the record form database 
+
+            MultiImageProject::where('id',$id)->delete();
+
+        }
+
+        $notification = array(
+            'message' => 'Multi Image Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    }//End Method 
 
 
     public function AddProject(){

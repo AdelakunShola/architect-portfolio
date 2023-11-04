@@ -40,6 +40,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <!-- COLUMNS 2 -->
                         <div class="item fadingcol  building-col">
                             <div class="wt-img-effect ">

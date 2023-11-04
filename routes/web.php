@@ -118,7 +118,8 @@ Route::controller(ProjectDetailController::class)->group(function() {
     Route::post('/update/project/{id}', 'UpdateProject')->name('update.project'); 
     Route::get('/project/list', 'ProjectList')->name('project.list');
     Route::get('/add/project', 'AddProject')->name('add.project');
-    Route::post('/store/project', 'StoreProject')->name('project.store'); 
+    Route::post('/store/project', 'StoreProject')->name('project.store');
+    Route::get('/multi/image/delete/{id}', 'MultiImageDelete')->name('multi.image.delete');
    
 
 });
