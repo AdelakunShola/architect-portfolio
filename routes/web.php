@@ -77,8 +77,6 @@ Route::middleware(['auth','roles:admin'])->group(function(){
 
     Route::get('/about/page', 'AboutPage')->name('about.page');
     Route::post('/update/about', 'UpdateAbout')->name('update.about');
-
-
     Route::get('/about/multi/image', 'AboutMultiImage')->name('about.multi.image');
     Route::post('/update/multi', 'UpdateMulti')->name('update.multi');
 });

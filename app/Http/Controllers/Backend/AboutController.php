@@ -59,8 +59,8 @@ public function UpdateMulti(Request $request){
 
        $name_gen = hexdec(uniqid()).'.'.$multi_image->getClientOriginalExtension();  // 3434343443.jpg
 
-        Image::make($multi_image)->resize(800,500)->save('upload/aboutmulti/'.$name_gen);
-        $save_url = 'upload/aboutmulti/'.$name_gen;
+        Image::make($multi_image)->resize(800,500)->save('upload/about/'.$name_gen);
+        $save_url = 'upload/about/'.$name_gen;
 
         MultiImage::insert([
              
