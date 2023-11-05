@@ -45,13 +45,15 @@
             multiple id="multiImg"  value=""
             accept="image/jpeg, image/jpg, image/gif, image/png" >
 
-      
+
 
             
 
-            <a href=""><i class="lni lni-close"></i> </a>  
+<img src="{{ (!empty($item->multi_image)) ? url('upload/aboutmulti/'.$item->multi_image) : url('upload/no_image.jpg') }}" alt="Admin" class="bg-primary" width="60"> 
 
-        
+  <a href=""><i class="lni lni-close"></i> </a>  
+
+
 
 
             <div class="row" id="preview_img"></div>
