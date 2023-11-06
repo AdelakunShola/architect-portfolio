@@ -1,5 +1,8 @@
 @php
+    
     $project = App\Models\ProjectDetail::latest()->get();
+    $projecttype = App\Models\ProjectType::latest()->get();
+
 @endphp
 <div class="section-full p-t90 p-lr80 latest_project-outer square_shape3">
 
@@ -15,9 +18,10 @@
                         <div class="col-md-8">
                             <ul class="btn-filter-wrap">
                                 <li class="btn-filter btn-active" data-filter="*">All Project</li>
-                                <li class="btn-filter" data-filter=".building-col">Building</li>
-                                <li class="btn-filter" data-filter=".interior-col">Interior</li>
-                                <li class="btn-filter" data-filter=".restaurant-col">Restaurant</li>
+                                @foreach($project as $item)
+                                <li class="btn-filter" data-filter=".building-col">{{ $item['type']['name'] }}</li>
+                                @endforeach
+                               
                             </ul>
                         </div>
                     </div>
@@ -32,7 +36,7 @@
                         @foreach($project as $item)
                         <div class="item fadingcol building-col">
                             <div class="wt-img-effect ">
-                                <img src="{{ asset($item->image) }}" alt="img">
+                                <img src="{{ asset('upload/projectdetail/'.$item->image) }}" alt="img">
                                 <div class="overlay-bx-2 ">
                                     <div class="line-amiation">
                                         <div class="text-white  font-weight-300 p-a40">

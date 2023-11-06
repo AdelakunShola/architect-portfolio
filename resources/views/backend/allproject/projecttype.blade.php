@@ -35,7 +35,7 @@
 								<thead>
 									<tr>
 										<th>S1</th>
-                                        <th>Image</th>
+                                        
                                         <th>Name</th>
                                         <th>Action</th>
 									</tr>
@@ -45,23 +45,21 @@
                                 @foreach ($allData as $key=> $item)
                                
 								@php
-								$project_details = App\Models\ProjectDetail::where('projecttype_id',$item->id)->get();
+								$project_type = App\Models\ProjectType::latest()->get();
 								@endphp
 
 
 									<tr>
 										<td>{{ $key+1 }}</td>
-										<td> <img src="{{ (!empty($item->projectdetail->image)) ? url('upload/projectdetail/'.$item->projectdetail->image) : url('upload/no_image.jpg')}}" alt=""
-                                        style="width:70px; height:40px;" />
-                                    </td>
+										
 										<td>{{ $item->name }}</td>
 
                                         <td>
-										@foreach ($project_details as $details)
-                                            <a href="{{ route('edit.project',$details->id)}}" class="btn btn-warning px-3 radius-30">Edit</a>
+										
+                                            <a href="{{ route('edit.project.type',$item->id)}}" class="btn btn-warning px-3 radius-30">Edit</a>
 							
                                         <a href="" class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
-										@endforeach
+										
                                         </td>
 									</tr>
                                     @endforeach
@@ -70,7 +68,7 @@
 								<tfoot>
 									<tr>
                                     <th>S1</th>
-                                        <th>Image</th>
+                                       
 										<th>Name</th>
                                         <th>Action</th>
 									</tr>

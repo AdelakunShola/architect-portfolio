@@ -44,5 +44,26 @@ class ProjectTypeController extends Controller
 
     }//end method
 
+
+    public function EditProjectType($id){
+        $editType = ProjectType::find($id);
+        return view('backend.allproject.editprojecttype',compact('editType'));
+    }//end method
+
+
+    public function UpdateProjectType(Request $request, $id){
+
+        $projecttype = ProjectType::find($id);
+        $projecttype->name = $request->name;
+
+        $notification = array(
+            'message' => 'Project type Updated Successfully',
+            'alert-type' => 'success'
+        );
+    
+        return redirect()->back()->with($notification);
+
+    }//end method
+
     
 }

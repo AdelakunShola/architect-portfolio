@@ -89,7 +89,6 @@ Route::middleware(['auth','roles:admin'])->group(function(){
 
     Route::get('/home/page', 'HomePage')->name('home.page');
     Route::post('/update/home', 'UpdateHome')->name('update.home');
-
     Route::get('/home/multi/image', 'HomeMultiImage')->name('home.multi.image');
     Route::post('/update/slide', 'UpdateSlide')->name('update.slide');
  
@@ -102,6 +101,8 @@ Route::middleware(['auth','roles:admin'])->group(function(){
  Route::controller(ProjectTypeController::class)->group(function() {
 
     Route::get('/project/type/list', 'ProjectType')->name('project.type.list');
+    Route::get('/edit/project/type/{id}', 'EditProjectType')->name('edit.project.type');
+    Route::post('/update/project/type/{id}', 'UpdateProjectType')->name('update.project.type'); 
     Route::get('/add/project/type', 'AddProjectType')->name('add.project.type');
     Route::post('/project/type/store', 'ProjectTypeStore')->name('projecttype.store');
 
