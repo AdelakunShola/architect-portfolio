@@ -1,3 +1,6 @@
+@php
+    $project = App\Models\ProjectDetail::latest()->get();
+@endphp
 <div class="section-full p-t90 p-lr80 latest_project-outer square_shape3">
 
                 <!-- TITLE START -->
@@ -25,135 +28,24 @@
                 <div class="section-content">
                     <div class="owl-carousel owl-carousel-filter  owl-btn-bottom-left">
                         <!-- COLUMNS 1 -->
-                        <div class="item fadingcol building-col">
-                            <div class="wt-img-effect ">
-                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic1.jpg')}}" alt="">
-                                <div class="overlay-bx-2 ">
-                                    <div class="line-amiation">
-                                        <div class="text-white  font-weight-300 p-a40">
-                                            <h2><a href="javascript:void(0);" class="text-white font-20 letter-spacing-4 text-uppercase">Triangle Concrete House on lake</a></h2>
-                                            <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.
-                                            </p>
-                                            <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- COLUMNS 2 -->
-                        <div class="item fadingcol  building-col">
-                            <div class="wt-img-effect ">
-                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic2.jpg')}}" alt="">
-                                <div class="overlay-bx-2 ">
-                                    <div class="line-amiation">
-                                        <div class="text-white  font-weight-300 p-a40">
-                                            <h2><a href="javascript:void(0);" class="text-white font-20 letter-spacing-4 text-uppercase">Triangle Concrete House on lake</a></h2>
-                                            <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.
-                                            </p>
-                                            <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- COLUMNS 3 -->
 
+                        @foreach($project as $item)
                         <div class="item fadingcol building-col">
                             <div class="wt-img-effect ">
-                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic3.jpg')}}" alt="">
+                                <img src="{{ asset($item->image) }}" alt="img">
                                 <div class="overlay-bx-2 ">
                                     <div class="line-amiation">
                                         <div class="text-white  font-weight-300 p-a40">
-                                            <h2><a href="javascript:void(0);" class="text-white font-20 letter-spacing-4 text-uppercase">Triangle Concrete House on lake</a></h2>
-                                            <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.
-                                            </p>
+                                            <h2><a href="javascript:void(0);" class="text-white font-20 letter-spacing-4 text-uppercase">{{ $item->title }}</a></h2>
+                                            <p>{{ $item->short_desc }}</p>
                                             <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- COLUMNS 4 -->
-                        <div class="item fadingcol building-col">
-                            <div class="wt-img-effect ">
-                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic4.jpg')}}" alt="">
-                                <div class="overlay-bx-2 ">
-                                    <div class="line-amiation">
-                                        <div class="text-white  font-weight-300 p-a40">
-                                            <h2><a href="javascript:void(0);" class="text-white font-20 letter-spacing-4 text-uppercase">Triangle Concrete House on lake</a></h2>
-                                            <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.
-                                            </p>
-                                            <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- COLUMNS 5 -->
-                        <div class="item fadingcol interior-col">
-                            <div class="wt-img-effect ">
-                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic5.jpg')}}" alt="">
-                                <div class="overlay-bx-2 ">
-                                    <div class="line-amiation">
-                                        <div class="text-white  font-weight-300 p-a40">
-                                            <h2><a href="javascript:void(0);" class="text-white font-20 letter-spacing-4 text-uppercase">Triangle Concrete House on lake</a></h2>
-                                            <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.
-                                            </p>
-                                            <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- COLUMNS 6 -->
-                        <div class="item fadingcol restaurant-col">
-                            <div class="wt-img-effect ">
-                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic6.jpg')}}" alt="">
-                                <div class="overlay-bx-2 ">
-                                    <div class="line-amiation">
-                                        <div class="text-white  font-weight-300 p-a40">
-                                            <h2><a href="javascript:void(0);" class="text-white font-20 letter-spacing-4 text-uppercase">Triangle Concrete House on lake</a></h2>
-                                            <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.
-                                            </p>
-                                            <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- COLUMNS 7 -->
-                        <div class="item fadingcol restaurant-col">
-                            <div class="wt-img-effect ">
-                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic7.jpg')}}" alt="">
-                                <div class="overlay-bx-2 ">
-                                    <div class="line-amiation">
-                                        <div class="text-white  font-weight-300 p-a40">
-                                            <h2><a href="javascript:void(0);" class="text-white font-20 letter-spacing-4 text-uppercase">Triangle Concrete House on lake</a></h2>
-                                            <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.
-                                            </p>
-                                            <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- COLUMNS 8 -->
-                        <div class="item fadingcol interior-col">
-                            <div class="wt-img-effect ">
-                                <img src="{{asset('frontend/assets/images/gallery/portrait/pic8.jpg')}}" alt="">
-                                <div class="overlay-bx-2 ">
-                                    <div class="line-amiation">
-                                        <div class="text-white  font-weight-300 p-a40">
-                                            <h2><a href="javascript:void(0);" class="text-white font-20 letter-spacing-4 text-uppercase">Triangle Concrete House on lake</a></h2>
-                                            <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.
-                                            </p>
-                                            <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+
+                       
 
                     </div>
                 </div>
