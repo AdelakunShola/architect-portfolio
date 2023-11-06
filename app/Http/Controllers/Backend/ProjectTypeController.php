@@ -51,19 +51,30 @@ class ProjectTypeController extends Controller
     }//end method
 
 
-    public function UpdateProjectType(Request $request, $id){
+    public function UpdateProjectType(Request $request){
 
-        $projecttype = ProjectType::find($id);
-        $projecttype->name = $request->name;
+        $id = $request->id; // Retrieve the project type ID from the request
+
+        $projectType = ProjectType::findOrFail($id);
+    
+        $projectType->update([
+            'name' => $request->name,
+            'created_at' => Carbon::now(),
+        ]);
 
         $notification = array(
             'message' => 'Project type Updated Successfully',
             'alert-type' => 'success'
         );
     
-        return redirect()->back()->with($notification);
-
-    }//end method
+        return redirect()->route('project.type.list')->with($notification);
 
     
+}//end method
 }
+
+
+
+    
+
+   

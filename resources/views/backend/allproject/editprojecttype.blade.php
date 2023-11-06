@@ -20,7 +20,7 @@
                         <div class="card-body p-4">
                             <h5 class="mb-4">Edit Project Type</h5>
 
-    <form class="row g-3" action="{{ route('update.project.type', ['id' => $projecttype->id])) }}" method="post" enctype="multipart/form-data">
+    <form class="row g-3" action="{{ route('update.project.type',$editType->id) }}" method="post" enctype="multipart/form-data">
         @csrf
 
        
