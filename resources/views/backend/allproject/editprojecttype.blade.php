@@ -37,7 +37,7 @@
 
                 <div class="col-md-4">
             <label for="input1" class="form-label">Project Type </label>
-            <input type="text" name="project_type" class="form-control" id="input1" value="{{ $editType->name }}" > 
+            <input type="text" name="name" class="form-control" id="input1" value="{{ $editType->name }}" > 
             
         </div>
 

@@ -75,10 +75,7 @@ class ProjectTypeController extends Controller
 
 
 
-public function DeleteProjectType($id){
-
-    $item = ProjectType::findOrFail($id);
-    
+     public function DeleteProjectType($id){
 
     ProjectType::findOrFail($id)->delete();
 
