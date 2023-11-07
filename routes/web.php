@@ -105,6 +105,7 @@ Route::middleware(['auth','roles:admin'])->group(function(){
     Route::post('/update/project/type/{id}', 'UpdateProjectType')->name('update.project.type'); 
     Route::get('/add/project/type', 'AddProjectType')->name('add.project.type');
     Route::post('/project/type/store', 'ProjectTypeStore')->name('projecttype.store');
+    Route::get('/delete/project/type/{id}', 'DeleteProjectType')->name('delete.project.type');
 
 });
 

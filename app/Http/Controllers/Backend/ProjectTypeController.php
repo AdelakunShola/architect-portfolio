@@ -51,6 +51,7 @@ class ProjectTypeController extends Controller
     }//end method
 
 
+
     public function UpdateProjectType(Request $request){
 
         $id = $request->id; // Retrieve the project type ID from the request
@@ -71,6 +72,27 @@ class ProjectTypeController extends Controller
 
     
 }//end method
+
+
+
+public function DeleteProjectType($id){
+
+    $item = ProjectType::findOrFail($id);
+    
+
+    ProjectType::findOrFail($id)->delete();
+
+      $notification = array(
+            'message' => 'Project Type Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+}// end method
+
+
+
 }
 
 

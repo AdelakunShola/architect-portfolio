@@ -58,7 +58,7 @@
 										
                                             <a href="{{ route('edit.project.type',$item->id)}}" class="btn btn-warning px-3 radius-30">Edit</a>
 							
-                                        <a href="" class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
+                                        <a href="{{ route('delete.project.type',$item->id)}}" class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
 										
                                         </td>
 									</tr>
