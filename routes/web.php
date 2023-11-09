@@ -9,6 +9,8 @@ use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\ProjectTypeController;
 use App\Http\Controllers\Backend\ProjectDetailController;
+use App\Http\Controllers\Frontend\FrontendProjectController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -115,6 +117,7 @@ Route::middleware(['auth','roles:admin'])->group(function(){
 Route::controller(ProjectDetailController::class)->group(function() {
 
     Route::get('/edit/project/{id}', 'EditProject')->name('edit.project');
+    Route::get('/delete/project/{id}', 'DeleteProject')->name('delete.project');
     Route::post('/update/project/{id}', 'UpdateProject')->name('update.project'); 
     Route::get('/project/list', 'ProjectList')->name('project.list');
     Route::get('/add/project', 'AddProject')->name('add.project');
@@ -125,3 +128,15 @@ Route::controller(ProjectDetailController::class)->group(function() {
 });
 
 });   // end admin group middleware
+
+
+
+////Frontend all project 
+
+Route::controller(FrontendProjectController::class)->group(function() {
+
+    Route::get('/all/project', 'AllFrontendProject')->name('all.project');
+    
+   
+});
+     

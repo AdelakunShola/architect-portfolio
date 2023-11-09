@@ -19,7 +19,7 @@
                             <ul class="btn-filter-wrap">
                                 <li class="btn-filter btn-active" data-filter="*">All Project</li>
                                 @foreach($project as $item)
-                                <li class="btn-filter" data-filter=".building-col">{{ $item['type']['name'] }}</li>
+                                <li class="btn-filter" data-filter=".building-col"></li>
                                 @endforeach
                                
                             </ul>
@@ -36,7 +36,7 @@
                         @foreach($project as $item)
                         <div class="item fadingcol building-col">
                             <div class="wt-img-effect ">
-                                <img src="{{ asset('upload/projectdetail/'.$item->image) }}" alt="img">
+                                <img src="{{ asset('/'.$item->image) }}" alt="img">
                                 <div class="overlay-bx-2 ">
                                     <div class="line-amiation">
                                         <div class="text-white  font-weight-300 p-a40">
@@ -47,11 +47,12 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                       
 
                        
 
                     </div>
+                    @endforeach
                 </div>
 
                 <div class="hilite-title p-lr20 m-tb20 text-right text-uppercase bdr-gray bdr-right">

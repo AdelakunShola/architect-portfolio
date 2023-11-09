@@ -53,7 +53,7 @@
 
         <div class="col-md-4">
             <label for="input1" class="form-label">Project Type </label>
-            <input type="text" name="roomtype_id" class="form-control" id="input1" value="" >  
+            <input type="text" name="project_type" class="form-control" id="input1" value="" >  
         </div>
         <div class="col-md-4">
             <label for="input2" class="form-label">Client Name</label>
@@ -62,12 +62,12 @@
 
         <div class="col-md-4">
             <label for="input2" class="form-label">Creative Director </label>
-            <input type="text" name="creative_director" class="form-control" id="input2" value="">
+            <input type="text" name="creative_director" class="form-control" id="input3" value="">
         </div>
 
         <div class="col-md-4">
             <label for="input2" class="form-label">Youtube Link </label>
-            <input type="text" name="link_url" class="form-control" id="input2" value="">
+            <input type="text" name="link_url" class="form-control" id="input4" value="">
         </div>
 
         <div class="col-md-12">
@@ -78,7 +78,7 @@
   
         <div class="col-md-12">
             <label for="input11" class="form-label">Short Description </label>
-            <textarea name="short_desc" class="form-control" id="input11" placeholder="Address ..." rows="3"></textarea>
+            <textarea name="short_desc" class="form-control" id="input5" placeholder="Address ..." rows="3"></textarea>
         </div>
 
         <div class="col-md-12">

@@ -22,6 +22,39 @@ class ProjectDetailController extends Controller
     }//end method
 
 
+
+    public function StoreProject(Request $request){
+
+        $image = $request->file('image');
+    $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+    Image::make($image)->resize(360,560)->save('upload/projectdetail/'.$name_gen);
+    $save_url = 'upload/projectdetail/'.$name_gen;
+
+    ProjectDetail::insert([
+
+        'title' => $request->title,
+        'short_desc' => $request->short_desc,
+        'main_desc' => $request->main_desc,
+        'client' => $request->client,
+        'project_type' => $request->project_type,
+        'creative_director' => $request-> creative_director,
+        'link_url' => $request->link_url,
+        'youtube' => $request->youtube,
+        'image' => $save_url,
+        'created_at' => Carbon::now(),
+
+    ]);
+
+    $notification = array(
+        'message' => 'Project Details Inserted Successfully',
+        'alert-type' => 'success'
+    );
+
+    return redirect()->route('project.list')->with($notification);
+
+    }//end method
+
+
     public function UpdateProject(Request $request, $id){
 
         $project = ProjectDetail::find($id);
@@ -74,7 +107,7 @@ class ProjectDetailController extends Controller
         'alert-type' => 'success'
     );
 
-    return redirect()->back()->with($notification);
+    return redirect()->route('project.list')->with($notification);
 
     }//end method
 
@@ -126,6 +159,20 @@ class ProjectDetailController extends Controller
         return view('backend.allproject.all_project',compact('allproject'));
 
     }//end method
+
+
+    public function DeleteProject($id){
+
+        ProjectDetail::findOrFail($id)->delete();
+    
+          $notification = array(
+                'message' => 'Project Deleted Successfully',
+                'alert-type' => 'success'
+            );
+    
+            return redirect()->back()->with($notification);
+    
+    }// end method
 
     
 }

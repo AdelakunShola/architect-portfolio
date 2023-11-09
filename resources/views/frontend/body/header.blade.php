@@ -81,7 +81,7 @@
                                     </li>
 
                                     <li>
-                                         <a href="works.html">Projects</a>
+                                         <a href="{{ route('all.project') }}">Projects</a>
                                     </li>
 
                                      <li>
