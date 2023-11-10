@@ -67,7 +67,7 @@
                                    <div class="masonry-item cat-1 col-lg-3 col-md-6 col-sm-6 m-b30">
                                    
                                        <div class="wt-img-effect ">
-                                           <img src="{{ asset('/'.$item->image) }}" alt="">
+                                           <img src="{{ asset('/'.$item->image) }}" alt="" style="width: 750px; height:400px;" >
                                            <div class="overlay-bx-2 ">
                                                <div class="line-amiation">
                                                    <div class="text-white  font-weight-300 p-a40">
