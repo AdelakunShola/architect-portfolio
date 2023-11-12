@@ -47,7 +47,14 @@
                    <div class="container">
                        <!-- PAGINATION START -->
                        <div class="filter-wrap p-tb50">
-                        
+                           <ul class="masonry-filter link-style  text-uppercase">
+                                   <li class="active"><a data-filter="*" href="#">All</a></li>
+                                   <li><a data-filter=".cat-1" href="#">House</a></li>
+                                   <li><a data-filter=".cat-2" href="#">Building</a></li>
+                                   <li><a data-filter=".cat-3" href="#">Office</a></li>
+                                   <li><a data-filter=".cat-4" href="#">Garden</a></li>
+                                   <li><a data-filter=".cat-5" href="#">Interior</a></li>
+                           </ul>
                        </div>
                        <!-- PAGINATION END -->
                    </div>
