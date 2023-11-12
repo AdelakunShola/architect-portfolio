@@ -16,7 +16,30 @@
            <!-- HEADER END -->
            
            <!-- CONTENT START -->
-         
+           <div class="page-content">
+               <!-- INNER PAGE BANNER -->
+               <div class="wt-bnr-inr overlay-wraper bg-parallax bg-top-center"  data-stellar-background-ratio="0.5"  style="background-image:url(images/banner/6.jpg);">
+                   <div class="overlay-main bg-black opacity-07"></div>
+                   <div class="container">
+                       <div class="wt-bnr-inr-entry">
+                           <div class="banner-title-outer">
+                               <div class="banner-title-name">
+                                   <h2 class="text-white text-uppercase letter-spacing-5 font-18 font-weight-300">Sustainability, Innovation, and Craftmanship</h2>
+                               </div>
+                           </div>
+                           <!-- BREADCRUMB ROW -->                            
+                           <div class="p-tb20">
+                               <div>
+                                   <ul class="wt-breadcrumb breadcrumb-style-2">
+                                       <li><a href="javascript:void(0);">Home</a></li>
+                                       <li>Work grid</li>
+                                   </ul>
+                               </div>
+                           </div>
+                           <!-- BREADCRUMB ROW END -->                        
+                       </div>
+                   </div>
+               </div>
                <!-- INNER PAGE BANNER END -->
                
                <!-- SECTION CONTENT START -->
