@@ -126,7 +126,70 @@
                                    </div>
                                 </div>                                
                             </div>
-                           
+                            <!-- COLUMNS 2 -->
+                            <div class="item">
+                                <div class="wt-img-effect ">
+                                    <img src="images/projects/pic-2.jpg" alt="">
+                                    <div class="overlay-bx-2 ">
+                                        <div class="line-amiation p-a40">
+                                            <div class="text-white  font-weight-300">
+                                                <h2><a href="javascript:void(0);" class="text-black font-36 letter-spacing-4 text-uppercase text-white">Triangle Concrete House on lake</a></h2>
+                                                <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.speriores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusdam veritatis quisquam laboriosam esse beatae.
+                                                </p>
+                                                <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
+                                            </div>
+                                        </div>
+                                   </div>
+                                </div> 
+                            </div>
+                            <!-- COLUMNS 3 -->
+                            <div class="item">
+                                <div class="wt-img-effect ">
+                                    <img src="images/projects/pic-3.jpg" alt="">
+                                    <div class="overlay-bx-2 ">
+                                        <div class="line-amiation p-a40">
+                                            <div class="text-white  font-weight-300">
+                                                <h2><a href="javascript:void(0);" class="text-black font-36 letter-spacing-4 text-uppercase text-white">Triangle Concrete House on lake</a></h2>
+                                                <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.speriores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusdam veritatis quisquam laboriosam esse beatae.
+                                                </p>
+                                                <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
+                                            </div>
+                                        </div>
+                                   </div>
+                                </div> 
+                            </div>
+                            <!-- COLUMNS 4 -->
+                            <div class="item">
+                                <div class="wt-img-effect ">
+                                    <img src="images/projects/pic-4.jpg" alt="">
+                                    <div class="overlay-bx-2 ">
+                                        <div class="line-amiation p-a40">
+                                            <div class="text-white  font-weight-300">
+                                                <h2><a href="javascript:void(0);" class="text-black font-36 letter-spacing-4 text-uppercase text-white">Triangle Concrete House on lake</a></h2>
+                                                <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.speriores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusdam veritatis quisquam laboriosam esse beatae.
+                                                </p>
+                                                <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
+                                            </div>
+                                        </div>
+                                   </div>
+                                </div> 
+                            </div>
+                            <!-- COLUMNS 5 -->
+                            <div class="item">
+                                <div class="wt-img-effect ">
+                                    <img src="images/projects/pic-5.jpg" alt="">
+                                    <div class="overlay-bx-2 ">
+                                        <div class="line-amiation p-a40">
+                                            <div class="text-white  font-weight-300">
+                                                <h2><a href="javascript:void(0);" class="text-black font-36 letter-spacing-4 text-uppercase text-white">Triangle Concrete House on lake</a></h2>
+                                                <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.speriores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusdam veritatis quisquam laboriosam esse beatae.
+                                                </p>
+                                                <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
+                                            </div>
+                                        </div>
+                                   </div>
+                                </div> 
+                            </div>
                        </div>
                      </div> 
                      </div>
