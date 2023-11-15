@@ -18,7 +18,7 @@
                             <div>
                                 <ul class="wt-breadcrumb breadcrumb-style-2">
                                     <li><a href="javascript:void(0);">Home</a></li>
-                                    <li>Work carousel</li>
+                                    <li> {{ $projectdetails->project_type }} </li>
                                 </ul>
                             </div>
                         </div>
@@ -39,25 +39,25 @@
                             <div class="col-md-6 col-sm-12 project-detail-containt bg-black square_shape3">
                                 <div class="p-lr20 p-tb80">
                                     <div class="bg-white p-lr30 p-tb50 text-black">
-                                        <h2 class="m-t0"><span class="font-34 text-uppercase">Small &amp; Minimal House On Paters on Hill</span></h2>
-                                        <p>Typefaces and layouts, and in appeara nce of different general the content of dummy text is nonsensical.typefaces of dummy text is nonsensical.</p>
+                                        <h2 class="m-t0"><span class="font-34 text-uppercase">{{ $projectdetails->	title }}</span></h2>
+                                        <p>{!! $projectdetails->	main_desc !!}</p>
                                         <div class="product-block">
                                             <div class="row">
                                               <div class="col-md-6 col-sm-6 m-b30">
                                                 <h5 class="text-uppercase">Date</h5>
-                                                <p>January 08, 2018</p>
+                                                <p>{{ $projectdetails->created_at }}</p>
                                               </div>
                                               <div class="col-md-6 col-sm-6 m-b30">
                                                 <h5 class="text-uppercase">Client</h5>
-                                                <p>Branding NthPsd Company</p>
+                                                <p>{{ $projectdetails->client }}</p>
                                                </div>
                                               <div class="col-md-6 col-sm-6 m-b30">
                                                 <h5 class="text-uppercase">Project type</h5>
-                                                <p>Contruction, Brading</p>
+                                                <p>{{ $projectdetails->project_type }}</p>
                                               </div>
                                               <div class="col-md-6 col-sm-6 m-b30">
                                                 <h5 class="text-uppercase">Creative Director</h5>
-                                                <p>Lorem Ipsum doler</p>
+                                                <p>{{ $projectdetails->project_type }}</p>
                                               </div>
                                           </div>
                                         </div>
@@ -126,70 +126,7 @@
                                    </div>
                                 </div>                                
                             </div>
-                            <!-- COLUMNS 2 -->
-                            <div class="item">
-                                <div class="wt-img-effect ">
-                                    <img src="images/projects/pic-2.jpg" alt="">
-                                    <div class="overlay-bx-2 ">
-                                        <div class="line-amiation p-a40">
-                                            <div class="text-white  font-weight-300">
-                                                <h2><a href="javascript:void(0);" class="text-black font-36 letter-spacing-4 text-uppercase text-white">Triangle Concrete House on lake</a></h2>
-                                                <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.speriores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusdam veritatis quisquam laboriosam esse beatae.
-                                                </p>
-                                                <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
-                                            </div>
-                                        </div>
-                                   </div>
-                                </div> 
-                            </div>
-                            <!-- COLUMNS 3 -->
-                            <div class="item">
-                                <div class="wt-img-effect ">
-                                    <img src="images/projects/pic-3.jpg" alt="">
-                                    <div class="overlay-bx-2 ">
-                                        <div class="line-amiation p-a40">
-                                            <div class="text-white  font-weight-300">
-                                                <h2><a href="javascript:void(0);" class="text-black font-36 letter-spacing-4 text-uppercase text-white">Triangle Concrete House on lake</a></h2>
-                                                <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.speriores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusdam veritatis quisquam laboriosam esse beatae.
-                                                </p>
-                                                <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
-                                            </div>
-                                        </div>
-                                   </div>
-                                </div> 
-                            </div>
-                            <!-- COLUMNS 4 -->
-                            <div class="item">
-                                <div class="wt-img-effect ">
-                                    <img src="images/projects/pic-4.jpg" alt="">
-                                    <div class="overlay-bx-2 ">
-                                        <div class="line-amiation p-a40">
-                                            <div class="text-white  font-weight-300">
-                                                <h2><a href="javascript:void(0);" class="text-black font-36 letter-spacing-4 text-uppercase text-white">Triangle Concrete House on lake</a></h2>
-                                                <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.speriores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusdam veritatis quisquam laboriosam esse beatae.
-                                                </p>
-                                                <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
-                                            </div>
-                                        </div>
-                                   </div>
-                                </div> 
-                            </div>
-                            <!-- COLUMNS 5 -->
-                            <div class="item">
-                                <div class="wt-img-effect ">
-                                    <img src="images/projects/pic-5.jpg" alt="">
-                                    <div class="overlay-bx-2 ">
-                                        <div class="line-amiation p-a40">
-                                            <div class="text-white  font-weight-300">
-                                                <h2><a href="javascript:void(0);" class="text-black font-36 letter-spacing-4 text-uppercase text-white">Triangle Concrete House on lake</a></h2>
-                                                <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.speriores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusdam veritatis quisquam laboriosam esse beatae.
-                                                </p>
-                                                <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
-                                            </div>
-                                        </div>
-                                   </div>
-                                </div> 
-                            </div>
+                          
                        </div>
                      </div> 
                      </div>
@@ -203,7 +140,7 @@
 
 
   <div class="wt-post-media">
-        <iframe width="1000" height="563" src="https://www.youtube.com/embed/fafEHMnFe3g"></iframe>
+        <iframe width="1000" height="563" src="{{ $projectdetails->	link_url }}"></iframe>
    </div>
 
 

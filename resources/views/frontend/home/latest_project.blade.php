@@ -42,7 +42,7 @@
                                         <div class="text-white  font-weight-300 p-a40">
                                             <h2><a href="javascript:void(0);" class="text-white font-20 letter-spacing-4 text-uppercase">{{ $item->title }}</a></h2>
                                             <p>{{ $item->short_desc }}</p>
-                                            <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
+                                            <a href="{{ url('project/details/'.$item->id) }}" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
                                         </div>
                                     </div>
                                 </div>
