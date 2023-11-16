@@ -9,7 +9,10 @@ use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\ProjectTypeController;
 use App\Http\Controllers\Backend\ProjectDetailController;
+use App\Http\Controllers\Backend\ClientController;
+use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Frontend\FrontendProjectController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -126,6 +129,37 @@ Route::controller(ProjectDetailController::class)->group(function() {
    
 
 });
+
+
+
+////client logo Route
+Route::controller(ClientController::class)->group(function() {
+
+    Route::get('/client/list/', 'ClientList')->name('client.list');
+    Route::get('/add/client/', 'AddClient')->name('add.client');
+    Route::post('/store/client/', 'StoreClient')->name('client.store');
+    Route::get('/delete/client/{id}', 'DeleteClient')->name('client.delete'); 
+
+   
+
+});
+
+
+
+////testimonial logo Route
+Route::controller(TestimonialController::class)->group(function() {
+
+    Route::get('/testimonial/list/', 'TestimonialList')->name('testimonial.list');
+    Route::get('/add/testimonial/', 'AddTestimonial')->name('add.testimonial');
+    Route::post('/store/testimonial/', 'StoreTestimonial')->name('store.testimonial');
+  //  Route::get('/edit/testimonial/{id}', 'EditTestimonial')->name('edit.testimonial');
+  //  Route::get('/delete/testimonial/{id}', 'DeleteTestimonial')->name('delete.testimonial');
+
+   
+
+});
+
+
 
 });   // end admin group middleware
 

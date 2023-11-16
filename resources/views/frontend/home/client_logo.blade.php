@@ -1,3 +1,6 @@
+@php
+    $client = App\Models\Client::latest()->get();
+@endphp
 <div class="section-full p-tb40 bg-black square_shape4">
                 <div class="container">
                     <div class="section-content">
@@ -20,47 +23,16 @@
                                     <div class="section-content bg-white p-tb10">
                                         <div class="owl-carousel home-client-carousel owl-btn-center-v">
 
+                                        @foreach($client as $item)
                                             <div class="item">
                                                 <div class="ow-client-logo">
                                                     <div class="client-logo client-logo-media">
-                                                        <a href="javascript:void(0);"><img src="assets/images/client-logo/w1.png" alt=""></a></div>
+                                                        <a href="javascript:void(0);"><img src="{{asset($item->image)}}" alt=""></a></div>
                                                 </div>
                                             </div>
+                                            @endforeach
 
-                                            <div class="item">
-                                                <div class="ow-client-logo">
-                                                    <div class="client-logo client-logo-media">
-                                                        <a href="javascript:void(0);"><img src="assets/images/client-logo/w2.png" alt=""></a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="item">
-                                                <div class="ow-client-logo">
-                                                    <div class="client-logo client-logo-media">
-                                                        <a href="javascript:void(0);"><img src="assets/images/client-logo/w3.png" alt=""></a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="item">
-                                                <div class="ow-client-logo">
-                                                    <div class="client-logo client-logo-media">
-                                                        <a href="javascript:void(0);"><img src="assets/images/client-logo/w4.png" alt=""></a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="item">
-                                                <div class="ow-client-logo">
-                                                    <div class="client-logo client-logo-media">
-                                                        <a href="javascript:void(0);"><img src="assets/images/client-logo/w5.png" alt=""></a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="item">
-                                                <div class="ow-client-logo">
-                                                    <div class="client-logo client-logo-media">
-                                                        <a href="javascript:void(0);"><img src="assets/images/client-logo/w6.png" alt=""></a></div>
-                                                </div>
-                                            </div>
+                                            
 
                                         </div>
                                     </div>

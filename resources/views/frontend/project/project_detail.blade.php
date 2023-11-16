@@ -45,7 +45,7 @@
                                             <div class="row">
                                               <div class="col-md-6 col-sm-6 m-b30">
                                                 <h5 class="text-uppercase">Date</h5>
-                                                <p>{{ $projectdetails->created_at }}</p>
+                                                <p>{{ $projectdetails->created_at->format('Y-m-d') }}</p>
                                               </div>
                                               <div class="col-md-6 col-sm-6 m-b30">
                                                 <h5 class="text-uppercase">Client</h5>
@@ -78,32 +78,6 @@
                     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
             <!-- SECTION CONTENT START -->
             <div class="section-full p-tb90 bg-repeat" style="background-image:url(images/background/ptn-1.png);">
                 <div class="container-fluid">
@@ -111,21 +85,19 @@
                         <div class="work-carousel-outer">
                           <div class="owl-carousel work-carousel owl-btn-vertical-center">
                             <!-- COLUMNS 1 -->
+                            @foreach ($multiImage as $image)
                             <div class="item">
                                 <div class="wt-img-effect ">
-                                    <img src="images/projects/pic-1.jpg" alt="">
+                                    <img src="{{ asset('upload/projectdetail/multi/'.$image->multi_image) }}" alt="">
                                     <div class="overlay-bx-2 ">
                                         <div class="line-amiation p-a40">
-                                            <div class="text-white  font-weight-300">
-                                                <h2><a href="javascript:void(0);" class="text-black font-36 letter-spacing-4 text-uppercase text-white">Triangle Concrete House on lake</a></h2>
-                                                <p>Morbi mattis ex non urna condimentum, eget eleifend diam molestie. Curabitur lorem enim, maximus non null.speriores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusdam veritatis quisquam laboriosam esse beatae.
-                                                </p>
-                                                <a href="javscript:;" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
-                                            </div>
+                                            
                                         </div>
                                    </div>
                                 </div>                                
                             </div>
+
+                            @endforeach
                           
                        </div>
                      </div> 
@@ -140,8 +112,8 @@
 
 
   <div class="wt-post-media">
-        <iframe width="1000" height="563" src="{{ $projectdetails->	link_url }}"></iframe>
-   </div>
+        <iframe width="1000" height="563" src="https://www.youtube.com/embed/{{ $projectdetails->link_url }}"></iframe>
+  </div>
 
 
 

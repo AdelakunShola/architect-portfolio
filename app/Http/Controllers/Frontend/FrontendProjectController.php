@@ -21,8 +21,8 @@ class FrontendProjectController extends Controller
     public function ProjectDetailsPage($id){
 
         $projectdetails = ProjectDetail::find($id);
-        $multiimage = MultiImageProject::where('project_detail_id',$id)->get();
-        return view('frontend.project.project_detail',compact('projectdetails'));
+        $multiImage = MultiImageProject::where('project_detail_id',$id)->get();
+        return view('frontend.project.project_detail',compact('projectdetails','multiImage'));
 
     }//end method
 
