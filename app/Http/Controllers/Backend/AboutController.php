@@ -17,7 +17,7 @@ class AboutController extends Controller
         $multi_image = MultiImage::latest()->get();
         $aboutpage = AboutUs::find(1);
 
-        return view('backend.about_us.about_us', compact('aboutpage'));
+        return view('backend.about_us.about_us', compact('aboutpage','multi_image'));
     }// end method
 
     public function UpdateAbout(Request $request){

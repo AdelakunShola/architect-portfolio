@@ -12,6 +12,8 @@ use App\Http\Controllers\Backend\ProjectDetailController;
 use App\Http\Controllers\Backend\ClientController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Frontend\FrontendProjectController;
+use App\Http\Controllers\Frontend\FrontendAboutController;
+use App\Http\Controllers\Frontend\FrontendServicesController;
 
 
 /*
@@ -152,8 +154,9 @@ Route::controller(TestimonialController::class)->group(function() {
     Route::get('/testimonial/list/', 'TestimonialList')->name('testimonial.list');
     Route::get('/add/testimonial/', 'AddTestimonial')->name('add.testimonial');
     Route::post('/store/testimonial/', 'StoreTestimonial')->name('store.testimonial');
-  //  Route::get('/edit/testimonial/{id}', 'EditTestimonial')->name('edit.testimonial');
-  //  Route::get('/delete/testimonial/{id}', 'DeleteTestimonial')->name('delete.testimonial');
+    Route::get('/edit/testimonial/{id}', 'EditTestimonial')->name('edit.testimonial');
+    Route::post('/update/testimonial/{id}', 'UpdateTestimonial')->name('testimonial.update'); 
+    Route::get('/delete/testimonial/{id}', 'DeleteTestimonial')->name('delete.testimonial');
 
    
 
@@ -171,6 +174,25 @@ Route::controller(FrontendProjectController::class)->group(function() {
 
     Route::get('/all/project', 'AllFrontendProject')->name('all.project');
     Route::get('/project/details/{id}', 'ProjectDetailsPage');
+    
+   
+});
+
+
+////Frontend about 
+
+Route::controller(FrontendAboutController::class)->group(function() {
+
+    Route::get('/about', 'FrontendAbout')->name('about');
+    
+});
+
+////Frontend services 
+
+Route::controller(FrontendServicesController::class)->group(function() {
+
+    Route::get('/services', 'FrontendServices')->name('services');
+    
     
    
 });

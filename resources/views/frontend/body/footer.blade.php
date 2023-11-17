@@ -25,3 +25,19 @@
     </div>
 </div>
 </footer>
+
+ <!-- BUTTON TOP START -->
+ <button class="scroltop"><span class="fa fa-angle-up  relative" id="btn-vibrate"></span></button>
+        
+        </div>
+    
+    <!-- LOADING AREA START ===== -->
+    <div class="loading-area">
+        <div class="loading-box"></div>
+        <div class="loading-pic">
+            <svg id="triangle" width="140px" height="140px" viewBox="-3 -4 39 39">
+              <polygon fill="#fff" stroke="#000" stroke-width="2" points="16,0 32,32 0,32"></polygon>
+            </svg>
+        </div>
+    </div>
+    <!-- LOADING AREA  END ====== -->  

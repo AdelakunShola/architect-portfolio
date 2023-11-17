@@ -8,13 +8,13 @@
                     <div class="section-content">
                         <div class="row">
                             <div class="col-md-5 col-sm-12 text-uppercase text-black">
-                                <span class="font-30 font-weight-300">{{$aboutpage->main_title}}</span>
+                                <span class="font-30 font-weight-300">Welcome</span>
                                 <h2 class="font-40">
-                                    {{$aboutpage->short_desc}}
+                                    {{$aboutpage->main_title}}
                                 </h2>
                                 
-                                <p class="text-lowercase">{!! $aboutpage->main_desc !!}</p>
-                                <a href="javascript:void(0);" class="btn-half site-button button-lg m-b15"><span>Read More</span><em></em></a>
+                                <p class="text-lowercase">{!! $aboutpage->short_desc !!}</p>
+                                <a href="{{ url('/about') }}" class="btn-half site-button button-lg m-b15"><span>Read More</span><em></em></a>
                             </div>
 
                             <div class="col-md-7 col-sm-12">

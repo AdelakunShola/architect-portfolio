@@ -77,7 +77,7 @@
                                      </li>
                                     
                                     <li>
-                                        <a href="services.html">Services</a>
+                                        <a href="{{ route('services') }}">Services</a>
                                     </li>
 
                                     <li>
@@ -85,7 +85,7 @@
                                     </li>
 
                                      <li>
-                                        <a href="about.html">About us</a>
+                                        <a href="{{ route('about') }}">About us</a>
                                     </li>
 
                                     <li>
