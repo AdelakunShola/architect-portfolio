@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\ProjectTypeController;
 use App\Http\Controllers\Backend\ProjectDetailController;
 use App\Http\Controllers\Backend\ClientController;
 use App\Http\Controllers\Backend\TestimonialController;
+use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Frontend\FrontendProjectController;
 use App\Http\Controllers\Frontend\FrontendAboutController;
 use App\Http\Controllers\Frontend\FrontendServicesController;
@@ -159,6 +160,22 @@ Route::controller(TestimonialController::class)->group(function() {
     Route::get('/delete/testimonial/{id}', 'DeleteTestimonial')->name('delete.testimonial');
 
    
+
+});
+
+
+
+
+////service  Route
+Route::controller(ServiceController::class)->group(function() {
+
+    Route::get('/service/list/', 'ServiceList')->name('service.list');
+    Route::get('/add/service/', 'AddService')->name('add.service');
+    Route::get('/store/service/', 'StoreService')->name('service.store');
+    Route::get('/edit/service/{id}', 'EditService')->name('edit.service');
+    Route::post('/update/service/{id}', 'UpdateService')->name('service.update'); 
+    Route::get('/delete/testimonial/{id}', 'DeleteTestimonial')->name('delete.testimonial');
+    
 
 });
 

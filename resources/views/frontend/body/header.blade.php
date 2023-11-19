@@ -89,7 +89,7 @@
                                     </li>
 
                                     <li>
-                                         <a href="contact.html">Contact us</a>
+                                         <a href="{{ route('contact_us') }}">Contact us</a>
                                     </li>
 
                                         </ul>
