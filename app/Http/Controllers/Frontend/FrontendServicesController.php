@@ -10,5 +10,7 @@ class FrontendServicesController extends Controller
     public function FrontendServices(){
 
         return view('frontend.services.services');
-    }
+    }// end method
+
+    
 }

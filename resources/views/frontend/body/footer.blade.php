@@ -1,3 +1,6 @@
+@php
+ $setting = App\Models\SiteSetting::find(1);
+@endphp
 <footer class="site-footer bg-gray footer-light footer-wide">
 
 <div class="footer-bottom overlay-wraper">
@@ -10,7 +13,7 @@
             </div>
 
             <div class="col-md-4 text-center copyright-block p-t15">
-                <span class="copyrights-text">© 2018 Your Company. Designed By thememajestic.</span>
+                <span class="copyrights-text">© {{ $setting->copyright }}</span>
             </div>
 
             <div class="col-md-4 wt-footer-bot-right p-t15">
@@ -24,7 +27,7 @@
         </div>
     </div>
 </div>
-</footer>
+</footer> 
 
  <!-- BUTTON TOP START -->
  <button class="scroltop"><span class="fa fa-angle-up  relative" id="btn-vibrate"></span></button>

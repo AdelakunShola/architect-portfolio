@@ -1,5 +1,11 @@
 @extends('frontend.main_master')
 @section('main')
+
+@php
+    
+    $service = App\Models\Service::latest()->get();
+
+@endphp
         
             <!-- INNER PAGE BANNER -->
             <div class="wt-bnr-inr overlay-wraper bg-parallax bg-top-center"  data-stellar-background-ratio="0.5"  style="background-image:url(images/banner/3.jpg);">
@@ -19,7 +25,7 @@
                                     <li>Services</li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> 
                         <!-- BREADCRUMB ROW END -->                        
                     </div>
                 </div>
@@ -45,12 +51,14 @@
                         <div class="row">
                         
                             <div class="col-md-12 col-sm-12 ">
+                            @foreach($service as $item)
                                 <div class="wt-icon-box-wraper left p-a20 m-b50 text-white" data-target="#tab1" data-toggle="tab">
                                     <div class="icon-content">
-                                        <h4 class="wt-tilte text-uppercase">Master Plans</h4>
-                                        <p>Vitae adipiscing turpis. Aenean ligula nibh, molestie id viverra a, dapibus at dolor. In iaculis viverra neque, ac eleifend. </p>
+                                        <h4 class="wt-tilte text-uppercase">{{ $item->title }}</h4>
+                                        <p>{{ $item->desc }} </p>
                                     </div>
                                 </div> 
+                                @endforeach
                              
                                
                             </div>

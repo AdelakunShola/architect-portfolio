@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Service;
+use Carbon\Carbon;
 
 class ServiceController extends Controller
 {
@@ -69,27 +70,23 @@ class ServiceController extends Controller
     );
 
     return redirect()->route('service.list')->with($notification);
-        }// end else
-    
-    
-        }// end method
-    
-    
-        public function DeleteTestimonial($id){
-    
-            $item = Testimonial::findOrFail($id);
-            $img = $item->image;
-            unlink($img);
-    
-            Testimonial::findOrFail($id)->delete();
-    
-              $notification = array(
-                    'message' => 'Testimonial Data Deleted Successfully',
-                    'alert-type' => 'success'
-                );
         
-                return redirect()->back()->with($notification);
+    
     
         }// end method
+    
+    
+        public function DeleteService($id)
+        {
+            Service::findOrFail($id)->delete();
+        
+            $notification = array(
+                'message' => 'Service Data Deleted Successfully',
+                'alert-type' => 'success'
+            );
+        
+            return redirect()->back()->with($notification);
+       
+        }// end method
 }
-}
+

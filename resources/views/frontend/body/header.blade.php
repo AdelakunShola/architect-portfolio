@@ -1,3 +1,6 @@
+@php
+ $setting = App\Models\SiteSetting::find(1);
+@endphp
 <header class="site-header header-style-1  nav-wide">
 
 <div class="sticky-header main-bar-wraper">
@@ -6,7 +9,7 @@
             <div class="logo-header">
                 <div class="logo-header-inner logo-header-one">
                     <a href="index.html">
-                    <img src="{{asset('frontend/assets/images/logo-dark.png')}}" width="171" height="49" alt="" />
+                    <img src="{{ $setting->logo }}" width="171" height="49" alt="" />
                 </a>
                 </div>
             </div>
@@ -28,16 +31,14 @@
                 <div class="extra-cell">
                     <div class="wt-topbar-right clearfix top-bar">
                         <ul class="social-bx list-inline pull-right">
-                            <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                            <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                            <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                            <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                            <li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
-                            <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
+                            <li><a href="{{ $setting->facebook }}" class="fa fa-facebook"></a></li>
+                            <li><a href="{{ $setting->twitter }}" class="fa fa-twitter"></a></li>
+                            <li><a href="{{ $setting->youtube }}" class="fa fa-youtube"></a></li>
+                            <li><a href="{{ $setting->instagram }}" class="fa fa-instagram"></a></li>
                         </ul>
                         <ul class="list-unstyled list-inline e-p-bx pull-right">
-                            <li><i class="fa fa-envelope"></i>Info@gmail.com</li>
-                            <li><i class="fa fa-phone"></i>(654) 123-4567</li>
+                            <li><i class="fa fa-envelope"></i>{{ $setting->email }}</li>
+                            <li><i class="fa fa-phone"></i>{{ $setting->phone }}</li>
                         </ul>
                     </div>
                 </div>
@@ -47,12 +48,10 @@
                         <div class="dropdown-menu bg-white">
                             <div class="top-bar">
                                 <ul class="social-bx list-inline">
-                                    <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
+                                <li><a href="{{ $setting->facebook }}" class="fa fa-facebook"></a></li>
+                                <li><a href="{{ $setting->twitter }}" class="fa fa-twitter"></a></li>
+                                <li><a href="{{ $setting->youtube }}" class="fa fa-youtube"></a></li>
+                                <li><a href="{{ $setting->instagram }}" class="fa fa-instagram"></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -73,13 +72,13 @@
                             <div class="vertical-nav">
                                 <ul class=" nav navbar-nav">
                                     <li class="active">
-                                        <a href="javascript:;">Home</a>
+                                        <a href="/">Home</a>
                                      </li>
                                     
                                     <li>
                                         <a href="{{ route('services') }}">Services</a>
                                     </li>
-
+ 
                                     <li>
                                          <a href="{{ route('all.project') }}">Projects</a>
                                     </li>
@@ -89,7 +88,7 @@
                                     </li>
 
                                     <li>
-                                         <a href="{{ route('contact_us') }}">Contact us</a>
+                                         <a href="{{ route('contact.us') }}">Contact us</a>
                                     </li>
 
                                         </ul>

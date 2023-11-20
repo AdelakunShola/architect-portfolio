@@ -15,6 +15,8 @@ use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Frontend\FrontendProjectController;
 use App\Http\Controllers\Frontend\FrontendAboutController;
 use App\Http\Controllers\Frontend\FrontendServicesController;
+use App\Http\Controllers\Backend\ContactController;
+use App\Http\Controllers\Backend\SettingController;
 
 
 /*
@@ -171,11 +173,32 @@ Route::controller(ServiceController::class)->group(function() {
 
     Route::get('/service/list/', 'ServiceList')->name('service.list');
     Route::get('/add/service/', 'AddService')->name('add.service');
-    Route::get('/store/service/', 'StoreService')->name('service.store');
+    Route::post('/store/service/', 'StoreService')->name('service.store');
     Route::get('/edit/service/{id}', 'EditService')->name('edit.service');
     Route::post('/update/service/{id}', 'UpdateService')->name('service.update'); 
-    Route::get('/delete/testimonial/{id}', 'DeleteTestimonial')->name('delete.testimonial');
+    Route::get('/delete/service/{id}', 'DeleteService')->name('delete.service');
     
+
+});
+
+
+
+
+/// SITE SETTING All Route 
+Route::controller(SettingController::class)->group(function(){
+
+    Route::get('/site/setting', 'SiteSetting')->name('site.setting');
+    Route::post('/site/update', 'SiteUpdate')->name('site.update');
+   
+      
+});
+
+
+/// backend contact message All Route 
+Route::controller(ContactController::class)->group(function(){
+
+    Route::get('/contact/message', 'AdminContactMessage')->name('contact.message');
+   
 
 });
 
@@ -209,8 +232,14 @@ Route::controller(FrontendAboutController::class)->group(function() {
 Route::controller(FrontendServicesController::class)->group(function() {
 
     Route::get('/services', 'FrontendServices')->name('services');
-    
-    
-   
+      
+});
+
+
+Route::controller(ContactController::class)->group(function() {
+
+    Route::get('/contactUs', 'FrontendContact')->name('contact.us');
+    Route::post('/store/contact', 'StoreContactUs')->name('store.contact');
+      
 });
      

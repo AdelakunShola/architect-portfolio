@@ -9,14 +9,7 @@
 @endphp
 
 
-<div class="page-wraper"> 
-       	
-           <!-- HEADER START -->
-         
-           <!-- HEADER END -->
-           
-           <!-- CONTENT START -->
-           <div class="page-content">
+          
                <!-- INNER PAGE BANNER -->
                <div class="wt-bnr-inr overlay-wraper bg-parallax bg-top-center"  data-stellar-background-ratio="0.5"  style="background-image:url(images/banner/6.jpg);">
                    <div class="overlay-main bg-black opacity-07"></div>
@@ -90,17 +83,11 @@
                </div>
                <!-- SECTION CONTENT END  -->
    
-           </div>
-           <!-- CONTENT END -->
+      
+         
+     
            
-           <!-- FOOTER START -->
-           
-           <!-- FOOTER END -->
-   
-           <!-- BUTTON TOP START -->
-           <button class="scroltop"><span class="fa fa-angle-up  relative" id="btn-vibrate"></span></button>
-           
-       </div>
+       
     
   
 

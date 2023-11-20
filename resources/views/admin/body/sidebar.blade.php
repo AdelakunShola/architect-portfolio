@@ -159,6 +159,65 @@
         </li>
 
 
+
+		<li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
+                </div>
+                <div class="menu-title">Services</div>
+            </a>
+            <ul>
+            
+                <li> <a href="{{ route('service.list') }}"><i class='bx bx-radio-circle'></i>All Services</a>
+                </li>
+
+				<li> <a href="{{ route('add.service') }}"><i class='bx bx-radio-circle'></i>Add Service</a>
+                </li>
+				
+               
+               
+                 
+            </ul>
+        </li>
+
+
+
+		<li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
+                </div>
+                <div class="menu-title">Contact Message </div>
+            </a>
+            <ul>
+           
+                <li> <a href="{{ route('contact.message') }}"><i class='bx bx-radio-circle'></i>Contact Message</a>
+                </li>
+               
+                </ul>
+        </li>
+
+
+
+		<li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
+                </div>
+                <div class="menu-title">Setting</div>
+            </a>
+            <ul>
+            
+                
+               
+          
+                <li> <a href="{{ route('site.setting') }}"><i class='bx bx-radio-circle'></i>Site Setting</a>
+                </li>
+              
+               
+                 
+            </ul>
+        </li>
+
+
 				<li class="menu-label">UI Elements</li>
 				
 				<li>
