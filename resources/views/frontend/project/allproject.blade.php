@@ -8,7 +8,7 @@
 
 @endphp
 
- 
+  
           
                <!-- INNER PAGE BANNER -->
                <div class="wt-bnr-inr overlay-wraper bg-parallax bg-top-center"  data-stellar-background-ratio="0.5"  style="background-image:url(images/banner/6.jpg);">
