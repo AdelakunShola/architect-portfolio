@@ -1,5 +1,5 @@
-<div class="section-full p-tb100 overlay-wraper bg-top-center bg-parallax" data-stellar-background-ratio="0.5" style="background-image:url(images/background/bg-11.jpg);">
-                <div class="overlay-main opacity-08 bg-black"></div>
+<div class="section-full p-tb100 overlay-wraper bg-top-center bg-parallax" data-stellar-background-ratio="0.5" style="background-image:url('{{ asset('frontend/assets/images/background/bg-11.jpg') }}')">
+                <div class="overlay-main opacity-08 bg-black"></div> 
                 <div class="container ">
                     <div class="row">
                         <div class="col-md-6 col-sm-12">

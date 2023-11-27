@@ -1,6 +1,5 @@
 @extends('frontend.main_master')
 @section('main')
-
 @php
     
     $project = App\Models\ProjectDetail::latest()->get();
@@ -11,7 +10,7 @@
   
           
                <!-- INNER PAGE BANNER -->
-               <div class="wt-bnr-inr overlay-wraper bg-parallax bg-top-center"  data-stellar-background-ratio="0.5"  style="background-image:url(images/banner/6.jpg);">
+               <div class="wt-bnr-inr overlay-wraper bg-parallax bg-top-center"  data-stellar-background-ratio="0.5"  style="background-image:url('{{ asset('frontend/assets/images/banner/5.jpg') }}')">
                    <div class="overlay-main bg-black opacity-07"></div>
                    <div class="container">
                        <div class="wt-bnr-inr-entry">
@@ -64,9 +63,10 @@
                                            <div class="overlay-bx-2 ">
                                                <div class="line-amiation">
                                                    <div class="text-white  font-weight-300 p-a40">
-                                                       <h2><a href="{{ url('project/details/'.$item->id) }}" class="text-white font-20 letter-spacing-4 text-uppercase">{{ $item->title }}</a></h2>
+                                                       <h2><a href="{{ url('details/'.$item->id) }}" class="text-white font-20 letter-spacing-4 text-uppercase">{{ $item->title }}</a></h2>
                                                        <p>{{ $item->short_desc }} </p>
-                                                       <a href="{{ url('project/details/'.$item->id) }}" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
+                                                       <a href="{{ url('details/'.$item->id) }}" class="v-button letter-spacing-4 font-12 text-uppercase p-l20">Read More</a>
+
                                                    </div>
                                                </div>
                                           </div>

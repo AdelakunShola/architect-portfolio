@@ -1,8 +1,8 @@
 @php
     $testimonial = App\Models\Testimonial::latest()->get();
 @endphp
-<div class="section-full p-t140 bg-repeat " style="background-image:url(assets/images/background/ptn-1.png);">
-                <div class="container">
+<div class="section-full p-t140 bg-repeat " style="background-image: url('{{ asset('frontend/assets/images/background/ptn-1.png') }}')">
+                <div class="container">         
                     <div class="section-content">
                         <!-- TITLE START -->
                         <div class="section-head text-left">

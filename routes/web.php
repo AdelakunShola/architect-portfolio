@@ -212,8 +212,8 @@ Route::controller(ContactController::class)->group(function(){
 
 Route::controller(FrontendProjectController::class)->group(function() {
 
-    Route::get('/all/project', 'AllFrontendProject')->name('all.project');
-    Route::get('/project/details/{id}', 'ProjectDetailsPage');
+    Route::get('/project', 'AllFrontendProject')->name('all.project');
+    Route::get('/details/{id}', 'ProjectDetailsPage')->name('project.details');
     
    
 });

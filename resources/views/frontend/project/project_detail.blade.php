@@ -1,10 +1,17 @@
 @extends('frontend.main_master')
 @section('main')
 
+@php
+ $setting = App\Models\SiteSetting::find(1);
+@endphp
+
+
+
  <!-- CONTENT START -->
  <div class="page-content">
             <!-- INNER PAGE BANNER -->
-            <div class="wt-bnr-inr overlay-wraper bg-parallax bg-top-center"  data-stellar-background-ratio="0.5"  style="background-image:url(images/banner/5.jpg);">
+            <div class="wt-bnr-inr overlay-wraper bg-parallax bg-top-center" data-stellar-background-ratio="0.5" style="background-image: url('{{ asset('frontend/assets/images/banner/5.jpg') }}')">
+
                 <div class="overlay-main bg-black opacity-07"></div>
                 <div class="container">
                     <div class="wt-bnr-inr-entry">
@@ -33,7 +40,7 @@
 
 
 
-        <div class="project-detail-outer bg-top-left bg-parallax bg-center"  data-stellar-background-ratio="0.5"  style="background-image:url(images/banner/5.jpg)">
+        <div class="project-detail-outer bg-top-left bg-parallax bg-center"  data-stellar-background-ratio="0.5"  style="background-image:url('{{ asset('frontend/assets/images/banner/5.jpg') }}')">
                         <div class="row">
                             <div class="col-md-6 col-sm-12 project-detail-pic"></div>
                             <div class="col-md-6 col-sm-12 project-detail-containt bg-black square_shape3">
@@ -63,12 +70,10 @@
                                         </div>
                                         <div class="p-t0">
                                             <ul class="social-icons social-square social-darkest m-b0">
-                                                <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                                <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                                <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                                <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                                <li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
-                                                <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
+                                            <li><a href="{{ $setting->facebook }}" class="fa fa-facebook"></a></li>
+                                            <li><a href="{{ $setting->twitter }}" class="fa fa-twitter"></a></li>
+                                            <li><a href="{{ $setting->youtube }}" class="fa fa-youtube"></a></li>
+                                            <li><a href="{{ $setting->instagram }}" class="fa fa-instagram"></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -79,7 +84,8 @@
 
 
             <!-- SECTION CONTENT START -->
-            <div class="section-full p-tb90 bg-repeat" style="background-image:url(images/background/ptn-1.png);">
+            <div class="section-full p-tb90 bg-repeat" >
+
                 <div class="container-fluid">
                     <div class="section-content">            
                         <div class="work-carousel-outer">
@@ -89,11 +95,7 @@
                             <div class="item">
                                 <div class="wt-img-effect ">
                                     <img src="{{ asset('upload/projectdetail/multi/'.$image->multi_image) }}" alt="">
-                                    <div class="overlay-bx-2 ">
-                                        <div class="line-amiation p-a40">
-                                            
-                                        </div>
-                                   </div>
+                                    
                                 </div>                                
                             </div>
 

@@ -8,7 +8,7 @@
         <div class="container">
             <div class="logo-header">
                 <div class="logo-header-inner logo-header-one">
-                    <a href="index.html">
+                    <a href="/">
                     <img src="{{ $setting->logo }}" width="171" height="49" alt="" />
                 </a>
                 </div>
