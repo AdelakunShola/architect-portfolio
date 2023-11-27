@@ -5,8 +5,6 @@
  $setting = App\Models\SiteSetting::find(1);
 @endphp
 
-
-
  <!-- CONTENT START -->
  <div class="page-content">
             <!-- INNER PAGE BANNER -->

@@ -80,27 +80,30 @@ class ProjectDetailController extends Controller
 
         ///update multi-image
 
-        if($project->save()){
+        // Update multi-image
+        if ($project->save()) {
             $files = $request->multi_img;
-            if(!empty($files)){
-                $subimage = MultiImageProject::where('project_detail_id',$id)->get()->toArray();
-                MultiImageProject::where('project_detail_id',$id)->delete();
-
+            if (!empty($files)) {
+                $subimage = MultiImageProject::where('project_detail_id', $id)->get()->toArray();
+                MultiImageProject::where('project_detail_id', $id)->delete();
             }
-            if(!empty($files)){
-                foreach($files as $file){
-                    $imgName = date('YmdHi').$file->getClientOriginalName();
-                    $file->move('upload/projectdetail/multi/',$imgName);
-                    $subimage['multi_image'] = $imgName;
+
+            if (!empty($files)) {
+                foreach ($files as $file) {
+                    $imgName = date('YmdHi') . $file->getClientOriginalName();
+
+                    // Resize the multi-image
+                    $img = Image::make($file)->resize(770, 420);
+                    $img->save('upload/projectdetail/multi/' . $imgName);
 
                     $subimage = new MultiImageProject();
                     $subimage->project_detail_id = $project->id;
                     $subimage->multi_image = $imgName;
                     $subimage->save();
                 }
+            }
         }
-        
-    }///end if condition
+
 
     $notification = array(
         'message' => 'Project Updated Successfully',
