@@ -13,7 +13,7 @@
 			<ul class="metismenu" id="menu">
 
             <li>
-					<a href="widgets.html">
+					<a href="">
 						<div class="parent-icon"><i class='bx bx-home-alt'></i>
 						</div>
 						<div class="menu-title">Dashboard</div>
@@ -99,12 +99,12 @@
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
                 </div>
-                <div class="menu-title">Manage Project Details</div>
+                <div class="menu-title">Manage Project </div>
             </a>
             <ul>
             
                 <li> <a href="{{ route('project.list') }}"><i class='bx bx-radio-circle'></i>All Project</a>
-				<li> <a href="{{ route('project.list') }}"><i class='bx bx-radio-circle'></i>All Project</a>
+				<li> <a href="{{ route('add.project') }}"><i class='bx bx-radio-circle'></i>Add Project</a>
                 </li>
 				
                
