@@ -286,7 +286,7 @@
 
 
   <div class="wt-post-media">
-        <iframe width="1000" height="563" src="https://www.youtube.com/embed/{{ $projectdetails->link_url }}"></iframe>
+        <iframe width="1000" height="563" src="https://www.youtube.com/embed/{{ $projectdetails->link_url }}?rel=0"  frameborder="0" allowfullscreen></iframe>
   </div>
 
         <!-- FOOTER START -->
