@@ -45,11 +45,14 @@
             multiple id="multiImg"  value=""
             accept="image/jpeg, image/jpg, image/gif, image/png" >
 
-      
+            @foreach ($multiimg as $item)
 
+            <img src="{{ (!empty($item->multi_image)) ? url('upload/multi/'.$item->multi_image) : url('upload/no_image.jpg') }}" alt="Admin" class="bg-primary" width="60"> 
+
+              <a href="{{ route('multi.image.delete',$item->id) }}"><i class="lni lni-close"></i> </a>  
+
+              @endforeach
             
-
-            <a href=""><i class="lni lni-close"></i> </a>  
 
         
 

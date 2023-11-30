@@ -42,7 +42,7 @@
             multiple id="multiImg" accept="image/jpeg, image/jpg, image/gif, 
             image/png" >
 
-
+ 
             @foreach ($multiimg as $item)
 
             <img src="{{ (!empty($item->multi_image)) ? url('upload/projectdetail/multi/'.$item->multi_image) : url('upload/no_image.jpg') }}" alt="Admin" class="bg-primary" width="60"> 

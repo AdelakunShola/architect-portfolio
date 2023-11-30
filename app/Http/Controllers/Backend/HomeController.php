@@ -13,7 +13,8 @@ class HomeController extends Controller
 {
     public function HomePage (){
         $homepage = Homepage::find(1);
-        return view('backend.homepage.homepage',compact('homepage'));
+        
+        return view('backend.homepage.homepage',compact('homepage','multiimg'));
     }// end method
 
 
@@ -38,8 +39,9 @@ class HomeController extends Controller
     }// end method
 
     public function HomeMultiImage (){
+        $multiimg = HomeSlide::latest()->get();
 
-        return view('backend.homepage.homepage_image');
+        return view('backend.homepage.homepage_image', compact('multiimg'));
 
     }// end method
 

@@ -80,7 +80,6 @@ class ProjectDetailController extends Controller
 
         ///update multi-image
 
-        // Update multi-image
         if ($project->save()) {
             $files = $request->multi_img;
             if (!empty($files)) {
