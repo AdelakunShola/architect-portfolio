@@ -37,7 +37,7 @@ use App\Http\Controllers\Backend\SettingController;
 Route::get('/', [UserController::class, 'index']);
    
 
-Route::get('/dashboard', function () {
+Route::get('/admin/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 

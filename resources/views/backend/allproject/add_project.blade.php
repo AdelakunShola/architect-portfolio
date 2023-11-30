@@ -72,13 +72,13 @@
 
         <div class="col-md-12">
             <label for="input11" class="form-label">Title </label>
-            <textarea name="title" class="form-control" id="input11" placeholder="Address ..." rows="3"></textarea>
+            <textarea name="title" class="form-control" id="input11" placeholder="Title ..." rows="3"></textarea>
         </div>
 
   
         <div class="col-md-12">
             <label for="input11" class="form-label">Short Description </label>
-            <textarea name="short_desc" class="form-control" id="input5" placeholder="Address ..." rows="3"></textarea>
+            <textarea name="short_desc" class="form-control" id="input5" placeholder="Short Description ..." rows="3"></textarea>
         </div>
 
         <div class="col-md-12">

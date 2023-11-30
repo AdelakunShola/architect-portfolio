@@ -78,37 +78,7 @@
   
                        
             <!-- OUR STORY SECTION START -->
-            <div class="section-full bg-gray p-tb90 square_shape1">
-                <div class="container">
-                    <!-- TITLE START -->
-                    <div class="section-head text-left text-black">
-                        <h2 class="text-uppercase font-36">Our Story</h2>
-                        <div class="wt-separator-outer">
-                            <div class="wt-separator bg-black"></div>
-                        </div>
-                    </div>
-                    <!-- TITLE END -->                  
-                    <div class="section-content our-story">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-12">
-                                <div class="wt-media our-story-pic">
-                                    <img src="images/gallery/pic1.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                                <div class="wt-box our-story-detail">
-                                    <h3 class="text-uppercase">2011-12</h3>
-                                    <h2 class="text-uppercase">Park Boathouse</h2>
-                                    <p>Vitae adipiscing turpis. Aenean ligula nibh, molestie id viverra a, dapibus at dolor. In iaculis viverra neque, ac eleifend ante lobortis id. In viverra ipsum stie id viverra. </p>
-                                </div>
-                            </div>
-                        </div>  
-                                                         
-                    </div>
-                </div>
-                
-                
-            </div>   
+         
             <!-- OUR STORY SECTION END -->        
             
             @endsection

@@ -18,9 +18,9 @@
 
             <div class="col-md-4 wt-footer-bot-right p-t15">
                 <ul class="copyrights-nav pull-right">
-                    <li><a href="javascript:void(0);">Terms  & Condition</a></li>
-                    <li><a href="javascript:void(0);">Privacy Policy</a></li>
-                    <li><a href="contact-1.html">Contact Us</a></li>
+                    <li><a href="">Terms  & Condition</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="{{ route('contact.us') }}">Contact Us</a></li>
                 </ul>
             </div>
 
