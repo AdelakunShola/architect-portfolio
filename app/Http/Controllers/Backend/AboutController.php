@@ -8,6 +8,7 @@ use App\Models\AboutUs;
 use App\Models\MultiImage;
 use Illuminate\Support\Carbon;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\File;
 
 
 
@@ -47,9 +48,13 @@ class AboutController extends Controller
 
 public function AboutMultiImage(){
 
-    return view('backend.about_us.multi_image');
+    $multiimg = MultiImage::latest()->get();
+     return view('backend.about_us.multi_image', compact('multiimg'));
 
 }// end method
+
+
+
 
 public function UpdateMulti(Request $request){
 
@@ -82,6 +87,27 @@ public function UpdateMulti(Request $request){
    
 
 }// end method
+
+
+public function deleteAboutMulti($id)
+{
+    $imageToDelete = MultiImage::findOrFail($id);
+
+    // Delete the physical file
+    if (File::exists(public_path($imageToDelete->multi_image))) {
+        File::delete(public_path($imageToDelete->multi_image));
+    }
+
+    // Delete the record from the database
+    $imageToDelete->delete();
+
+    $notification = array(
+        'message' => 'Multi Image Inserted Successfully', 
+        'alert-type' => 'success'
+    );
+
+    return redirect()->back()->with($notification);
+}
 
 
 

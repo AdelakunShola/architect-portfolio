@@ -89,6 +89,7 @@ Route::middleware(['auth','roles:admin'])->group(function(){
     Route::post('/update/about', 'UpdateAbout')->name('update.about');
     Route::get('/about/multi/image', 'AboutMultiImage')->name('about.multi.image');
     Route::post('/update/multi', 'UpdateMulti')->name('update.multi');
+    Route::get('/delete/about/multi/{id}', 'deleteAboutMulti')->name('about.multi');
 });
 
 
@@ -101,6 +102,8 @@ Route::middleware(['auth','roles:admin'])->group(function(){
     Route::post('/update/home', 'UpdateHome')->name('update.home');
     Route::get('/home/multi/image', 'HomeMultiImage')->name('home.multi.image');
     Route::post('/update/slide', 'UpdateSlide')->name('update.slide');
+    Route::get('/delete/multi/image/{id}', 'deleteMultiImage')->name('multi.delete');
+
  
 });
 

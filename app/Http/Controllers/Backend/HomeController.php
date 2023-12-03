@@ -8,13 +8,14 @@ use App\Models\Homepage;
 use App\Models\HomeSlide;
 use Illuminate\Support\Carbon;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\File;
 
 class HomeController extends Controller
 {
     public function HomePage (){
         $homepage = Homepage::find(1);
         
-        return view('backend.homepage.homepage',compact('homepage','multiimg'));
+        return view('backend.homepage.homepage',compact('homepage'));
     }// end method
 
 
@@ -76,4 +77,25 @@ class HomeController extends Controller
 
         
     }// end method
+
+
+    public function deleteMultiImage($id)
+    {
+        $imageToDelete = HomeSlide::findOrFail($id);
+
+        // Delete the physical file
+        if (File::exists(public_path($imageToDelete->multi_image))) {
+            File::delete(public_path($imageToDelete->multi_image));
+        }
+
+        // Delete the record from the database
+        $imageToDelete->delete();
+
+        $notification = [
+            'message' => 'Image deleted successfully',
+            'alert-type' => 'success',
+        ];
+
+        return redirect()->back()->with($notification);
+    }
 }

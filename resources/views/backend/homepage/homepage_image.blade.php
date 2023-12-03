@@ -46,12 +46,13 @@
             accept="image/jpeg, image/jpg, image/gif, image/png" >
 
             @foreach ($multiimg as $item)
+    <img src="{{ (!empty($item->multi_image)) ? url('/'.$item->multi_image) : url('upload/no_image.jpg') }}" alt="Admin" class="bg-primary" width="60">
+    
+    <a href="{{ route('multi.delete', $item->id) }}" onclick="return confirm('Are you sure you want to delete this image?')">
+        <i class="lni lni-close"></i>
+    </a>
+@endforeach
 
-            <img src="{{ (!empty($item->multi_image)) ? url('upload/multi/'.$item->multi_image) : url('upload/no_image.jpg') }}" alt="Admin" class="bg-primary" width="60"> 
-
-              <a href="{{ route('multi.image.delete',$item->id) }}"><i class="lni lni-close"></i> </a>  
-
-              @endforeach
             
 
         
@@ -104,7 +105,7 @@
         </script>   
         
         
-        <!--------===Show MultiImage ========------->
+      <!--------===Show MultiImage ========------->
 <script>
     $(document).ready(function(){
      $('#multiImg').on('change', function(){ //on file input change
@@ -132,6 +133,25 @@
      });
     });
  </script>
+
+
+
+ 
+ <script type="text/javascript">
+    $(document).ready(function(){
+       var counter = 0;
+       $(document).on("click",".addeventmore",function(){
+             var whole_extra_item_add = $("#whole_extra_item_add").html();
+             $(this).closest(".add_item").append(whole_extra_item_add);
+             counter++;
+       });
+       $(document).on("click",".removeeventmore",function(event){
+             $(this).closest("#basic_facility_section_remove").remove();
+             counter -= 1
+       });
+    });
+ </script>
+
 
 
 @endsection
