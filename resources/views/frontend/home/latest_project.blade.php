@@ -36,7 +36,7 @@
                         @foreach($project as $item)
                         <div class="item fadingcol building-col">
                             <div class="wt-img-effect ">
-                                <img src="{{ asset('upload/projectdetail/'.$item->image) }}" alt="img">
+                                <img src="{{ asset('/'.$item->image) }}" alt="img">
                                 <div class="overlay-bx-2 ">
                                     <div class="line-amiation">
                                         <div class="text-white  font-weight-300 p-a40">

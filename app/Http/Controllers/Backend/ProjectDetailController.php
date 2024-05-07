@@ -26,9 +26,19 @@ class ProjectDetailController extends Controller
     public function StoreProject(Request $request){
 
         $image = $request->file('image');
-    $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-    Image::make($image)->resize(360,560)->save('upload/projectdetail/'.$name_gen);
-    $save_url = 'upload/projectdetail/'.$name_gen;
+
+        // Generate a unique name for the image
+        $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+        
+        // Save the image to the desired directory
+        $image->move('upload/projectdetail/', $name_gen);
+        
+        // Construct the URL of the saved image
+        $save_url = 'upload/projectdetail/' . $name_gen;
+        
+
+
+    
 
     ProjectDetail::insert([
 
@@ -72,7 +82,7 @@ class ProjectDetailController extends Controller
 
             $image = $request->file('image');
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-            Image::make($image)->resize(360,560)->save('upload/projectdetail/'.$name_gen);
+            Image::make($image)->resize(345,536.66)->save('upload/projectdetail/'.$name_gen);
             $project['image'] = $name_gen;    
         }
 
@@ -92,7 +102,7 @@ class ProjectDetailController extends Controller
                     $imgName = date('YmdHi') . $file->getClientOriginalName();
 
                     // Resize the multi-image
-                    $img = Image::make($file)->resize(770, 420);
+                    $img = Image::make($file)->resize(1920, 1080);
                     $img->save('upload/projectdetail/multi/' . $imgName);
 
                     $subimage = new MultiImageProject();
