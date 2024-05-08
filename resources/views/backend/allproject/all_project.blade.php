@@ -51,8 +51,9 @@
                         <td>{{ $key+1 }}</td>
                         <td>{{ $item->project_type }}</td>
                         <td>{{ $item->creative_director }}</td>
-                        <td>{{ $item->image }}</td>
-                        <td>{{ $item->main_desc }}</td>
+                        <td> <img src="{{ asset($item->image) }}" style="width: 50px; height:50px;" >  </td>
+                        <td>{{ Illuminate\Support\Str::limit($item->main_desc, 50) }}</td>
+
                         <td>{{ $item->short_desc }}</td>
                         <td>{{ $item->title }}</td>
                         <td>{{ $item->link_url }}</td>

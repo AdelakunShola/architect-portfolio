@@ -17,7 +17,7 @@
                         </div>
                         <div class="col-md-8">
                             <ul class="btn-filter-wrap">
-                                <li class="btn-filter btn-active" data-filter="*">All Project</li>
+                                <li class="btn-filter btn-active"  data-filter="*"><a href="{{ route('all.project') }}">All Project</a></li>
                                 @foreach($projecttype as $item)
                                 <li class="btn-filter" data-filter=".building-col">{{ $item->name }}</li>
                                 @endforeach

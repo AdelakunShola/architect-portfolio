@@ -29,7 +29,7 @@
             <label for="input3" class="form-label">Main Image </label>
             <input type="file" name="image" class="form-control" id="image"  >
 
-            <img id="showImage" src="{{ (!empty($editData->image)) ? url('upload/projectdetail/'.$editData->image) : url('upload/no_image.jpg') }} "
+            <img id="showImage" src="{{ (!empty($editData->image)) ? url('/'.$editData->image) : url('upload/no_image.jpg') }} "
                  alt="" class="bg-primary" width="70" height="50"> 
         </div>
 

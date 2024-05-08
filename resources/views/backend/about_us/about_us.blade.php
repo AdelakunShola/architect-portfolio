@@ -49,10 +49,13 @@
             <textarea name="short_desc" class="form-control" id="input11" placeholder="Short Description ..." rows="3">{{ $aboutpage->short_desc }}</textarea>
         </div>
 
+
         <div class="col-md-12">
-            <label for="input11" class="form-label"> Description </label>
-            <textarea name="main_desc" class="form-control" id="myeditorinstance" >{{ $aboutpage->main_desc }}</textarea>
+            <label for="input11" class="form-label">Long Description </label>
+            <textarea name="main_desc" class="form-control" id="input11" placeholder="Long Description ..." rows="5">{!! $aboutpage->main_desc !!}</textarea>
         </div>
+
+       
         <div class="col-md-12">
             <label for="input11" class="form-label">Link Url </label>
             <textarea name="link_url" class="form-control" id="input11" placeholder="Title ..." rows="2">{{ $aboutpage->link_url }}</textarea>
