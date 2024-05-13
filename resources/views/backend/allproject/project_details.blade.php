@@ -94,6 +94,11 @@
 
         <div class="col-md-12">
             <label for="input11" class="form-label"> Description </label>
+            <textarea name="main_desc" class="form-control" id="input5" placeholder="Short Description ..." rows="5">{{ $editData->main_desc }}</textarea>
+        </div>
+
+        <div class="col-md-12">
+            <label for="input11" class="form-label"> Description </label>
             <textarea name="main_desc" class="form-control" id="myeditorinstance" >{!! $editData->main_desc !!}</textarea>
         </div>
 

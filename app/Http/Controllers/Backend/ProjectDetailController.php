@@ -22,51 +22,64 @@ class ProjectDetailController extends Controller
     }//end method
 
 
-
     public function StoreProject(Request $request){
 
-        $image = $request->file('image');
+        // Store single image
+    $image = $request->file('image');
+    $save_url = null;
 
+    // Check if an image was uploaded
+    if ($image) {
         // Generate a unique name for the image
         $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
         
-        // Save the image to the desired directory
-        $image->move('upload/projectdetail/', $name_gen);
+        // Resize and save the image using Intervention Image
+        $img = Image::make($image)->resize(1080, 1349);
+        $img->save('upload/projectdetail/' . $name_gen);
         
         // Construct the URL of the saved image
         $save_url = 'upload/projectdetail/' . $name_gen;
-        
-
-
+    }
     
-
-    ProjectDetail::insert([
-
-        'title' => $request->title,
-        'short_desc' => $request->short_desc,
-        'main_desc' => $request->main_desc,
-        'client' => $request->client,
-        'project_type' => $request->project_type,
-        'creative_director' => $request-> creative_director,
-        'link_url' => $request->link_url,
-        'youtube' => $request->youtube,
-        'image' => $save_url,
-        'created_at' => Carbon::now(),
-
-    ]);
-
-    $notification = array(
-        'message' => 'Project Details Inserted Successfully',
-        'alert-type' => 'success'
-    );
-
-    return redirect()->route('project.list')->with($notification);
-
-    }//end method
-
-
+        // Create and save the project detail
+        $projectDetail = new ProjectDetail();
+        $projectDetail->title = $request->title;
+        $projectDetail->short_desc = $request->short_desc;
+        $projectDetail->main_desc = $request->main_desc;
+        $projectDetail->client = $request->client;
+        $projectDetail->project_type = $request->project_type;
+        $projectDetail->creative_director = $request->creative_director;
+        $projectDetail->link_url = $request->link_url;
+        $projectDetail->image = $save_url;
+        $projectDetail->created_at = Carbon::now();
+        $projectDetail->save();
+    
+        // Store multiple images
+        if ($request->hasFile('multi_img')) {
+            $files = $request->file('multi_img');
+            foreach ($files as $file) {
+                $imgName = date('YmdHi') . $file->getClientOriginalName();
+    
+                // Resize the multi-image
+                $img = Image::make($file)->resize(1920, 1080);
+                $img->save('upload/projectdetail/multi/' . $imgName);
+    
+                $subimage = new MultiImageProject();
+                $subimage->project_detail_id = $projectDetail->id;
+                $subimage->multi_image = $imgName;
+                $subimage->save();
+            }
+        }
+    
+        $notification = [
+            'message' => 'Project Details Inserted Successfully',
+            'alert-type' => 'success'
+        ];
+    
+        return redirect()->route('project.list')->with($notification);
+    }
+    
     public function UpdateProject(Request $request, $id){
-
         $project = ProjectDetail::find($id);
         $project->title = $request->title;
         $project->short_desc = $request->short_desc;
@@ -75,54 +88,48 @@ class ProjectDetailController extends Controller
         $project->project_type = $request->project_type;
         $project->creative_director = $request->creative_director;
         $project->link_url = $request->link_url;
-
-        ///Update single image
-
-        if($request->file('image')){
-
+    
+        // Update single image if provided
+        if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-            Image::make($image)->resize(1920, 1080)->save('upload/projectdetail/'.$name_gen);
-            $project['image'] = $name_gen;    
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(1920, 1080)->save('upload/projectdetail/' . $name_gen);
+            $project->image = 'upload/projectdetail/' . $name_gen;
         }
-
+    
         $project->save();
-
-        ///update multi-image
-
-        if ($project->save()) {
-            $files = $request->multi_img;
-            if (!empty($files)) {
-                $subimage = MultiImageProject::where('project_detail_id', $id)->get()->toArray();
-                MultiImageProject::where('project_detail_id', $id)->delete();
-            }
-
-            if (!empty($files)) {
-                foreach ($files as $file) {
-                    $imgName = date('YmdHi') . $file->getClientOriginalName();
-
-                    // Resize the multi-image
-                    $img = Image::make($file)->resize(1920, 1080);
-                    $img->save('upload/projectdetail/multi/' . $imgName);
-
-                    $subimage = new MultiImageProject();
-                    $subimage->project_detail_id = $project->id;
-                    $subimage->multi_image = $imgName;
-                    $subimage->save();
-                }
+    
+        // Update multi-images if provided
+        if ($request->hasFile('multi_img')) {
+            $files = $request->file('multi_img');
+            foreach ($files as $file) {
+                $imgName = date('YmdHi') . $file->getClientOriginalName();
+    
+                // Resize the multi-image
+                $img = Image::make($file)->resize(1920, 1080);
+                $img->save('upload/projectdetail/multi/' . $imgName);
+    
+                $subimage = new MultiImageProject();
+                $subimage->project_detail_id = $project->id;
+                $subimage->multi_image = $imgName;
+                $subimage->save();
             }
         }
+    
+        $notification = [
+            'message' => 'Project Updated Successfully',
+            'alert-type' => 'success'
+        ];
+    
+        return redirect()->route('project.list')->with($notification);
+    }
+    
+
+    
 
 
-    $notification = array(
-        'message' => 'Project Updated Successfully',
-        'alert-type' => 'success'
-    );
 
-    return redirect()->route('project.list')->with($notification);
-
-    }//end method
-
+    
 
 
     public function MultiImageDelete($id){
@@ -186,5 +193,9 @@ class ProjectDetailController extends Controller
     
     }// end method
 
+
+
     
 }
+
+
