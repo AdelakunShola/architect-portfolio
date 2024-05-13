@@ -134,7 +134,6 @@ Route::controller(ProjectDetailController::class)->group(function() {
     Route::get('/add/project', 'AddProject')->name('add.project');
     Route::post('/store/project', 'StoreProject')->name('project.store');
     Route::get('/multi/image/delete/{id}', 'MultiImageDelete')->name('multi.image.delete');
-   
 
 });
 
